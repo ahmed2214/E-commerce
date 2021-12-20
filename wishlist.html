@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <!--css links -->
+    <link rel="icon" href="img/tab-icon.png" type="image/png" sizes="16x16">
+    <link rel="pingback" href="https://lorada.c-themes.com/fashion-modern/xmlrpc.php">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/animate.compat.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/simplePagination.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">SUBSCRIBE NOW </h6>
+                                <h5 class="card-title">and get 30% off new collection</h5>
+                                <p class="card-text">Subscribe to the Lorada mailing list to receive updates on
+                                    newarrivals, specialoffers and our promotions. </p>
+                                <input type="email" name="EMAIL" placeholder="Enter your email address..." required=""
+                                    class="emailInput">
+                                <a href="#" class="btn btn-model">SUBSCRIBE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="modal-hide" href="#" onclick=" enableScroll()">✕</a>
+        </div>
+    </div>
+    <!-- search modal-->
+    <div class="search-box search-elem">
+        <button class="close" onclick="enableScroll()">x</button>
+        <div class="inner row p-2">
+          <div class="col-lg-12">
+            <input type="text" id="search-field" placeholder="Search for Products..." style="text-align: center;">
+          </div>
+        </div>
+       </div>
+       <div class="modal right fade fadeRightModal " id="cartModal" tabindex="-1" role="dialog"
+       aria-labelledby="myModalLabel2">
+       <div class="modal-dialog" role="document">
+           <div class="modal-content fadeRight">
+
+               <div class="modal-header modal-header-right ">
+                   <button type="button" class="close closeModal" data-dismiss="modal" aria-label="Close"><span
+                           aria-hidden="true">&times;</span></button>
+               </div>
+
+               <div class="col-lg-12">
+                   <div class="modal-body">
+                       <table class="showcart-right table mb-50" >
+                       </table>
+                       <p class="mini-cart-total total">
+                           <strong class="subtotalModal">Subtotal:</strong> <span class="Price-amount-modal amount"><bdi>
+                               <span class="cartPrice " style="font-size: 24px !important;">£</span>
+                               <span class="total-cart cartPrice"  style="font-size: 24px !important;">0</span>
+                           </bdi></span>
+                       </p>
+                       <div class="mini-cart-buttons buttons">
+                           <a href="cart.html" class="btn viewCart-button ">View cart</a>
+                           <a href="checkout.html" class="btn checkout-button ">Checkout</a>
+                           </div>
+                   </div>
+               </div>
+
+           </div><!-- modal-content -->
+       </div><!-- modal-dialog -->
+   </div>
+    <!---model / -->
+    <!--Header  -->
+    <header class="navbars">
+        <div class="topbar-container overflow-h ">
+            <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs navbar-light topnav  ">
+                <ul class="navbar-nav ml-5 mt-3 topNavUl">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle line-after" href="#0" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            English
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#0">German</a>
+                            <a class="dropdown-item" href="#0">Dutch</a>
+                            <a class="dropdown-item" href="#0">French</a>
+                            <a class="dropdown-item" href="#0">Italian</a>
+                            <a class="dropdown-item" href="#0">Japanese</a>
+                            <a class="dropdown-item" href="#0">Russian</a>
+                            <a class="dropdown-item" href="#0">Spanish</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown curance">
+                        <a class="nav-link dropdown-toggle line-after" href="#0" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            USD
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#0">EUR</a>
+                            <a class="dropdown-item" href="#0">INR</a>
+                            <a class="dropdown-item" href="#0">GBP</a>
+                            <a class="dropdown-item" href="#0">CAD</a>
+                            <a class="dropdown-item" href="#0">AUD</a>
+                            <a class="dropdown-item" href="#0">JPY</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link topNavline-after line-after">Free Shipping For All Orders Of $200</p>
+                    </li>
+                </ul>
+                <div class=" navbar-collapse secondTopNavUl" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item  track">
+                            <a class="nav-link line-after" href="#0">Track Your Order <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item Newsletter">
+                            <a class="nav-link line-after" href="#modal" onclick="disableScroll() "><i
+                                    class="fas fa-envelope"></i>
+                                Newsletter</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link line-after beforFacebook" href="#0"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-google-plus-g"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header-container-Brand">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <form class="d-flex">
+                    <span> <i class="far fa-search"></i></span>
+                    <input class="form-control mr-2 search searchForm" data-search type="search"
+                        placeholder="Search for Prodects..." aria-label="Search">
+                </form>
+
+                <div class=" navbar-collapse icon-logo " id="navbarScroll">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0 " style="max-height: 100px;">
+                        <li class="nav-item  icon " id="navbarScroll-icon">
+                            <a class="navbar-brand m-auto " href="index.html"><img src="img/logo.png"
+                                    alt="Lorada – Fashion Modern" srcset=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" navbar-collapse  " id="navbarScroll">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#0"><i class="far fa-user"></i></a>
+                        </li>
+                        <li class="nav-item icon-nav wishlistli">
+                            <a class="nav-link favourite" href="wishlist.html"><i class="far fa-heart"></i><span
+                                    class="addToFavourite total-count-wishlist">0</span></a>
+                        </li>
+                        <li class="nav-item cartli">
+                            <a class="nav-link cart" href="#cartModal" role="button" data-toggle="modal"
+                           ><i class="fas fa-shopping-bag"><span
+                                        class="addToCart  total-count">0</span></i></a>
+                        </li>
+                        <li class="nav-item Basketli">
+                            <a class="nav-link cart" href="#0">
+                                <span class="Basket"> Basket:£</span><bdi
+                                    class="total-cart basket-cash">437.21</bdi></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--header-container-links / -->
+        <div class="header-container-links">
+            <nav class="navbar navbar-expand-lg navbar-light scroll-nav scroll-navagition ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-home"></i></span>
+                                Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="shop.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-shopping-bag"></i></span> SHOP</a>
+                            <span class="sale">SALE!</span>
+                            <span class="marker-triangle"></i></span>
+                        </li>
+                        <li class="nav-item dropdown blogShow  ">
+                            <a class="nav-link dropdown-toggle line-after" onclick="window.location.href='blog.html'"
+                                id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <span class="link-icon pr-2"><img src="img/registration.svg" alt="registration-icon"
+                                        class="img-icon icon-1">
+                                    <img src="img/registration-1521660.svg" alt="registration-icon" style="width: 20px;"
+                                        class="img-icon icon-2"></span> Blog
+                            </a>
+                            <div class="dropdown-menu pb-0" aria-labelledby="navbarDropdownMenuLink"
+                                style="width:500px; ">
+                                <div class="row">
+                                    <div class="col-lg-4 pr-0">
+                                        <div class="card">
+                                            <div class="Link-group ">
+                                                <ul style="list-style: none;">
+                                                    <li class="nav-item"><a class="nav-link group-head" href="#0">Blog
+                                                            Layout</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">With
+                                                            Sidebar</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">List View</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">Masonry
+                                                            View</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 pr-0 ">
+                                        <div class="card ">
+                                            <div class="Link-group">
+                                                <ul>
+                                                    <li class="nav-item"><a class="nav-link group-head" href="#0">
+                                                            Post Layout</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">With
+                                                            Sidebar</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">Default
+                                                            Post</a></li>
+                                                    <li class="nav-item"><a class="nav-link"
+                                                            href="#0">BackstretchImage</a> </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 ">
+                                        <div class="card">
+                                            <img src="img/menu-bg1.png" alt="menu-bg1" style="height: 200px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- /2-cols dropdown -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-portrait"></i></span>
+                                ABOUT</a>
+                            <span class="new">NEW</span>
+                            <span class="marker-triangle marker-2"></i></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-shopping-bag"></i></span>
+                                CONTACT</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <div class="PerriodOffer">
+                <p>
+                    <a href="#0"> Sale Up To <span>50% Biggest Discounts.</span> Hurry! Limited Perriod Offer</a>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!--Header / -->
+    <!--page title  -->
+    <section class="page-title-section overflow-h">
+        <h1 class="page-title">Wishlist</h1>
+        <div class='tdWishlistTitle'>  <a href="#cartModal" role="button" data-toggle="modal"
+            data-click-state="0" class="add-to-cart"><i class="fal fa-shopping-bag"></i></a></div>
+    </section>
+    <!--page title / -->
+    <!--cart section  -->
+    <section class="cartSection overflow-h  ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="modal-body">
+                        <table class="show-wishlist table">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- cart  section / -->
+    <!-- footer  section / -->
+    <footer class="overflow-h">
+        <div class="footerContainer pt-10 pl-20 pr-20 pb-10">
+            <div class="row subscribe">
+                <div class="col-lg-1 col-md-1">
+                    <div>
+                        <h4 class="formHeader">Newsletter</h4>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+
+                    <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-831" method="post" data-id="831"
+                        data-name="Newsletter">
+                        <div class="mc4wp-form-fields">
+                            <div class="newsletter-form">
+                                <input type="email" name="EMAIL" placeholder="Enter your email address..." required="">
+                                <input type="submit" class="lorada-btn medium" value="SUBSCRIBE">
+                            </div>
+                        </div>
+                        <label style="display: none !important;">Leave this field empty if you're human: <input
+                                type="text" name="_mc4wp_honeypot" value="" tabindex="-1"
+                                autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp"
+                            value="1631207157"><input type="hidden" name="_mc4wp_form_id" value="831"><input
+                            type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
+                        <div class="mc4wp-response"></div>
+                    </form>
+                </div>
+                <div class="col-lg-4 col-md-4 icon-body">
+                    <div class="title">
+                        <span class="heading-title ">Follow Us:</span>
+                    </div>
+                    <div class="social-icons">
+                        <div class="icon">
+                            <a class="social-icon icon-facebook-f " target="_blank">
+                                <i class="fab fa-facebook-f"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class=" social-icon twitter " target="_blank">
+                                <i class="fab fa-twitter"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class=" social-icon pinterest-p " target="_blank">
+                                <i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                        <div class=" icon">
+                            <a class="google-plus-g " target="_blank">
+                                <i class="social-icon fab fa-google-plus-g"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class="instagram" target="_blank">
+                                <i class="social-icon fab fa-instagram"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class="youtube " target="_blank">
+                                <i class="social-icon fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-12">
+                        <div class="links-header">Find It Fast</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="linkiteam"><a href="#"><span>New In</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Best Seller</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Clothing</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Men</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Women</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Baby Girl</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Baby Boys</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Accessories</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Shoes</span></a></li>
+                                <li class="linkiteam"><a href="#"><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-12">
+                        <div class="links-header" style="visibility: hidden;">d</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="linkiteam"><a href="#"><span>T-Shirts</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Shirts</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Bags</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Dresses</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Jeans</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Shorts</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Blouses & Shirts</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Blazers</span></a></li>
+                                <li class="linkiteam"><a href="#"><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="col-lg-12">
+                        <div class="links-header">My Account</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="linkiteam"><a href="#"><span>My Account</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>My Wishlist</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Compare Products</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Discount</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Track Order</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Shop</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>About Us</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Returns/Exchange</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>FAQs</span></a></li>
+                                <li class="linkiteam"><a href="#"><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="links-header">Contact Us</div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="iteamSpan"><span class="spanicon"><i
+                                            class="fas fa-headphones-alt"></i></span><span class="textspan"> Got
+                                        Question? Call Us 24/7</span></li>
+                                <li class="iteamSpan"><span class="textonly">(364) 106 7572 <span class="betweentext">or
+                                        </span> (052) 611 5711</span></li>
+                                <li class="iteamSpan"><span class="spanicon"><i class="far fa-building"></i></span><span
+                                        class="textspan"> 3801 Chalk Butte Rd, Cutbank, Montana, USA</span></li>
+                                <li class="iteamSpan"><span class="spanicon"><i
+                                            class="far fa-envelope-open"></i></span><span class="textspan">
+                                        contact@lorada.com</span></li>
+                                <li class="iteamSpan"><span class="spanicon"><i class="far fa-clock"></i></span><span
+                                        class="textspan"> Work time:</span></li>
+                                <li class="iteamSpan"><span class="daysOpenTime">Mon - Sat: 9:00AM -6:00PM | Sunday:
+                                        Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row copyRightlayer">
+                <div class="col-lg-6 col-md-6 ">
+                    <div class="copyRight">
+                        © 2019 Lorada. All Rights Reserved.
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 payment">
+                    <div class="payment">
+                        <div class="paymentImg">
+                            <img src="img/payment_logo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- footer  section / -->
+    <!--script js -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.simplePagination.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="databse/product.json"></script>
+    <script src="js/main.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+</body>
+
+</html>

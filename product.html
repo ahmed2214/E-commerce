@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <!--css links -->
+    <link rel="icon" href="img/tab-icon.png" type="image/png" sizes="16x16">
+    <link rel="pingback" href="https://lorada.c-themes.com/fashion-modern/xmlrpc.php">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/animate.compat.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/simplePagination.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">SUBSCRIBE NOW </h6>
+                                <h5 class="card-title">and get 30% off new collection</h5>
+                                <p class="card-text">Subscribe to the Lorada mailing list to receive updates on
+                                    newarrivals, specialoffers and our promotions. </p>
+                                <input type="email" name="EMAIL" placeholder="Enter your email address..." required=""
+                                    class="emailInput">
+                                <a href="#" class="btn btn-model">SUBSCRIBE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="modal-hide" href="#" onclick=" enableScroll()">✕</a>
+        </div>
+    </div>
+    <!-- search modal-->
+    <div class="search-box search-elem">
+        <button class="close" onclick="enableScroll()">x</button>
+        <div class="inner row p-2">
+            <div class="col-lg-12">
+                <input type="text" id="search-field" placeholder="Search for Products..." style="text-align: center;">
+            </div>
+        </div>
+    </div>
+    <div class="modal right fade fadeRightModal " id="cartModal" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel2">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content fadeRight">
+
+                <div class="modal-header modal-header-right ">
+                    <button type="button" class="close closeModal" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="modal-body">
+                        <table class="showcart-right table mb-50">
+                        </table>
+                        <p class="mini-cart-total total">
+                            <strong class="subtotalModal">Subtotal:</strong> <span
+                                class="Price-amount-modal amount"><bdi>
+                                    <span class="cartPrice " style="font-size: 24px !important;">£</span>
+                                    <span class="total-cart cartPrice" style="font-size: 24px !important;">0</span>
+                                </bdi></span>
+                        </p>
+                        <div class="mini-cart-buttons buttons">
+                            <a href="cart.html" class="btn viewCart-button ">View cart</a>
+                            <a href="checkout.html" class="btn checkout-button ">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div>
+    <!---model / -->
+    <!--Header  -->
+    <header class="navbars ">
+        <div class="topbar-container overflow-h ">
+            <nav
+                class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs navbar-light topnav  ">
+                <ul class="navbar-nav ml-5 mt-3 topNavUl">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle line-after" href="#0" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            English
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#0">German</a>
+                            <a class="dropdown-item" href="#0">Dutch</a>
+                            <a class="dropdown-item" href="#0">French</a>
+                            <a class="dropdown-item" href="#0">Italian</a>
+                            <a class="dropdown-item" href="#0">Japanese</a>
+                            <a class="dropdown-item" href="#0">Russian</a>
+                            <a class="dropdown-item" href="#0">Spanish</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown curance">
+                        <a class="nav-link dropdown-toggle line-after" href="#0" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            USD
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#0">EUR</a>
+                            <a class="dropdown-item" href="#0">INR</a>
+                            <a class="dropdown-item" href="#0">GBP</a>
+                            <a class="dropdown-item" href="#0">CAD</a>
+                            <a class="dropdown-item" href="#0">AUD</a>
+                            <a class="dropdown-item" href="#0">JPY</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link topNavline-after line-after">Free Shipping For All Orders Of $200</p>
+                    </li>
+                </ul>
+                <div class=" navbar-collapse secondTopNavUl" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item  track">
+                            <a class="nav-link line-after" href="#0">Track Your Order <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item Newsletter">
+                            <a class="nav-link line-after" href="#modal" onclick="disableScroll() "><i
+                                    class="fas fa-envelope"></i>
+                                Newsletter</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link line-after beforFacebook" href="#0"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-google-plus-g"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header-container-Brand">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <form class="d-flex">
+                    <span> <i class="far fa-search"></i></span>
+                    <input class="form-control mr-2 search searchForm" data-search type="search"
+                        placeholder="Search for Prodects..." aria-label="Search">
+                </form>
+
+                <div class=" navbar-collapse icon-logo " id="navbarScroll">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0 " style="max-height: 100px;">
+                        <li class="nav-item  icon " id="navbarScroll-icon">
+                            <a class="navbar-brand m-auto " href="index.html"><img src="img/logo.png"
+                                    alt="Lorada – Fashion Modern" srcset=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" navbar-collapse  " id="navbarScroll">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#0"><i class="far fa-user"></i></a>
+                        </li>
+                        <li class="nav-item icon-nav wishlistli">
+                            <a class="nav-link favourite" href="wishlist.html"><i class="far fa-heart"></i><span
+                                    class="addToFavourite total-count-wishlist">0</span></a>
+                        </li>
+                        <li class="nav-item cartli">
+                            <a class="nav-link cart" href="#cartModal" role="button" data-toggle="modal"><i
+                                    class="fas fa-shopping-bag"><span class="addToCart  total-count">0</span></i></a>
+                        </li>
+                        <li class="nav-item Basketli">
+                            <a class="nav-link cart" href="#0">
+                                <span class="Basket"> Basket:£</span><bdi
+                                    class="total-cart basket-cash">437.21</bdi></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--header-container-links / -->
+        <div class="header-container-links">
+            <nav class="navbar navbar-expand-lg navbar-light scroll-nav scroll-navagition ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-home"></i></span>
+                                Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="shop.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-shopping-bag"></i></span> SHOP</a>
+                            <span class="sale">SALE!</span>
+                            <span class="marker-triangle"></i></span>
+                        </li>
+                        <li class="nav-item dropdown blogShow  ">
+                            <a class="nav-link dropdown-toggle line-after" onclick="window.location.href='blog.html'"
+                                id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <span class="link-icon pr-2"><img src="img/registration.svg" alt="registration-icon"
+                                        class="img-icon icon-1">
+                                    <img src="img/registration-1521660.svg" alt="registration-icon" style="width: 20px;"
+                                        class="img-icon icon-2"></span> Blog
+                            </a>
+                            <div class="dropdown-menu pb-0" aria-labelledby="navbarDropdownMenuLink"
+                                style="width:500px; ">
+                                <div class="row">
+                                    <div class="col-lg-4 pr-0">
+                                        <div class="card">
+                                            <div class="Link-group ">
+                                                <ul style="list-style: none;">
+                                                    <li class="nav-item"><a class="nav-link group-head" href="#0">Blog
+                                                            Layout</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">With
+                                                            Sidebar</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">List View</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">Masonry
+                                                            View</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 pr-0 ">
+                                        <div class="card ">
+                                            <div class="Link-group">
+                                                <ul>
+                                                    <li class="nav-item"><a class="nav-link group-head" href="#0">
+                                                            Post Layout</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">With
+                                                            Sidebar</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">Default
+                                                            Post</a></li>
+                                                    <li class="nav-item"><a class="nav-link"
+                                                            href="#0">BackstretchImage</a> </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 ">
+                                        <div class="card">
+                                            <img src="img/menu-bg1.png" alt="menu-bg1" style="height: 200px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- /2-cols dropdown -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-portrait"></i></span>
+                                ABOUT</a>
+                            <span class="new">NEW</span>
+                            <span class="marker-triangle marker-2"></i></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-shopping-bag"></i></span>
+                                CONTACT</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <div class="PerriodOffer">
+                <p>
+                    <a href="#0"> Sale Up To <span>50% Biggest Discounts.</span> Hurry! Limited Perriod Offer</a>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!--Header / -->
+    <!--product section  -->
+    <section class="prodcut overflow-h">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 ">
+                    <div class=" owl-carousel owl-theme disable-border " id="product-owl-carousel">
+                        <div class="product-wrapper zoom-image "
+                            data-dot="<button class='dotsbtn dotOne' id='dotOne' style='background-image=url('img/1a.jpg')''></button>">
+                            <img class="product-photo w-100" data-original-image="img/1a.jpg" src="img/1a.jpg"
+                                id="imageone">
+                        </div>
+                        <div class="product-wrapper zoom-image"
+                            data-dot="<button class='dotsbtn dotTwo' id='dotTwo'></button>">
+                            <img class="product-photo w-100" data-original-image="img/1b.jpg" src="img/1b.jpg"
+                                id="imagetwo">
+                        </div>
+                        <div class="product-wrapper zoom-image"
+                            data-dot="<button class='dotsbtn dotThree' id='dotThree'></button>">
+                            <img class="product-photo w-100" data-original-image="img/1c.jpg" src="img/1c.jpg"
+                                id="imagethree">
+                        </div>
+                        <div class="product-wrapper zoom-image"
+                            data-dot="<button class='dotsbtn dotFour' id='dotFour'></button>">
+                            <img class="product-photo w-100" data-original-image="img/1d.jpg" src="img/1d.jpg"
+                                id="imagefour">
+                        </div>
+                        <div class="product-wrapper zoom-image"
+                            data-dot="<button class='dotsbtn dotfive'id='dotfive' ></button>">
+                            <img class="product-photo w-100" data-original-image="img/1f.jpg" src="img/1f.jpg"
+                                id="imagefive">
+                        </div>
+                        <div class="product-wrapper zoom-image"
+                            data-dot="<button class='dotsbtn dotsix' id='dotsix'></button>">
+                            <img class="product-photo w-100" data-original-image="img/1g.jpg" src="img/1g.jpg"
+                                id="imagesix">
+                        </div>
+                        <div class="product-wrapper zoom-image"
+                            data-dot="<button class='dotsbtn dotseven'id='dotseven'></button>">
+                            <img class="product-photo w-100" data-original-image="img/1k.jpg" src="img/1k.jpg"
+                                id="imageseven">
+                        </div>
+                        <!--
+                        <div class="product-wrapper zoom-image "
+                            data-dot="<button class='dotsbtn doteEight' id='doteEight'></button>">
+                            <img class="product-photo w-100" data-original-image="img/1k.jpg" src="img/1k.jpg"
+                                id="imageEight">
+                        </div>-->
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class=" pl-0 pb-2">
+                        <h5 class="product-title"> <a href="#" class="product-title productNameshow">Drawstring Bermuda
+                                Shorts</a></h5>
+                        <div class="product-flashs flashs">
+                            <span class="onsale product-flash flash">-48%</span>
+                        </div>
+                        <div class="product-rating-view ">
+                            <div class="rating">
+                                <div class="Stars" rating="5" rating="5" style="--rating:5;"
+                                    aria-label="Rating of this product is 5 out of 5.">
+                                </div>
+                            </div>
+                            <div class="price-content prodcut-content ">
+
+                                <div class="prodect-rating-pepole " style="color: #858484; margin: 2px 10px;">
+                                    (2 customer reviews)
+                                </div>
+                            </div>
+                            <span class=" price amount priceProduct">
+                                <span class="Price-currencySymbol ">£</span> <bdi>36.89</bdi>
+                            </span>
+                        </div>
+                        <div class="timer-container product-timer-container" id="timerProduct">
+                            <div class="timer timer-day ml-0" id="days-3">-9<span class="timer-span">Days</span></div>
+                            <div class="timer timer-hours" id="hours-3">04<span class="timer-span">Hours</span></div>
+                            <div class="timer timer-minutes" id="minutes-3">11<span class="timer-span">Min</span></div>
+                            <div class="timer timer-seconds" id="seconds-3">44<span class="timer-span">Sec</span></div>
+                        </div>
+                        <div class="prodect-discrption ">
+                            <p class="discrption">Terras freta praeter hanc concordi. Adspirate ora diversa utramque
+                                diffundi. Instabilis sine sibi sic tenent gentes inmensa dominari.
+                                Norant nec galeae subsidere coeperunt. Cinxit locavit fixo campoque
+                                qui locis effigiem ante. Dissaepserat nullaque motura rudis postquam
+                                media iudicis. Permisit prima deorum tuba piscibus!
+                            </p>
+                        </div>
+                        <div class="product-info-text">
+                            <p class="text-header">SKU: </p>
+                            <div class="SKU" style="display: inline-block;">
+
+                            </div>
+                        </div>
+                        <div class="product-info-text">
+                            <p class="mb-0">
+                            <p class="text-header">Categories: </p>
+                            <div class="Categories" style="display: inline-block;">
+                                <a href="#">Jacket</a>
+                                <span>,</span>
+                                <a href="#">Women</a>
+                            </div>
+                            </p>
+                        </div>
+                        <div class="product-info-text">
+                            <p class="mb-0">
+                            <p class="text-header">Tags:</p>
+                            <div class="tag" style="display: inline-block;">
+                                <a href="#">0 - 50</a>
+                                <span>,</span>
+                                <a href="#">colored</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="prodcutSellInfo">
+                            <div class="row dotes-container product-info-text product-info-color w-100 mb-3">
+                                <p class="text-header">Color : </p>
+                                <div class="color" style="display: flex;">
+                                    <div class="gray dotes dotesProduct " data-click-state="0"></div>
+                                    <div class="dotes pink dotesProduct " alt="img/1k.jpg" data-click-state="0"
+                                        id="pink-item">
+                                        <div class="dotes doteBorderHide doteBorderHideProduct "
+                                            id="doteBorder-pink-item">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="row dotes-container product-info-text product-info-size dotes-container-img w-100 mb-3">
+                                <p class="text-header ">Size : </p>
+                                <div class="size w-90" style=" display: flex;">
+                                    <div class="gray dotes dotesImg dotesSize">
+                                        <P style="margin:auto">L</P>
+                                    </div>
+                                    <div class="gray dotes dotesImg dotesSize">
+                                        <P style="margin:auto">M</P>
+                                    </div>
+                                    <div class="gray dotes dotesImg dotesSize">
+                                        <P style="margin:auto">XL</P>
+                                    </div>
+                                    <div class="gray dotes dotesImg dotesSize">
+                                        <P style="margin:auto">XXL</P>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="input-group " style="width: 120px;"><button
+                                    class="minus-item minus-item-poduct input-group-addon btn "
+                                    data-id="item-card-11"><span>-</span></button><input type="number"
+                                    class="item-count item-count-product form-control"
+                                    style="-webkit-appearance: none;  max-width: 60px;text-align: center;border: none;;max-width: 64px;"
+                                    data-id="item-card-11" value="5"><button
+                                    class="plus-item plus-item-proudect btn  input-group-addon"
+                                    data-id="item-card-11"><span>+</span></button></div>
+                            <div class="btn addProductToCart "><a href="#cartmodal" role="button" data-toggle="modal"
+                                    data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                        options</span></a></div>
+                        </div>
+                        <div class="product-info-text social ">
+                            <span class="text-header">
+                                Share: </span>
+                            <div class="color-scheme-dark">
+                                <div class="lorada-social-button facebook-icon">
+                                    <a href="#" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </div>
+                                <div class="lorada-social-button twitter-icon">
+                                    <a href="#" target="_blank">
+                                        <i class="fab fa-twitter"></i>
+
+                                    </a>
+                                </div>
+                                <div class="lorada-social-button google-icon">
+                                    <a href="#" target="_blank">
+                                        <i class="fab fa-google-plus-g"></i>
+
+                                    </a>
+                                </div>
+                                <div class="lorada-social-button pinterest-icon">
+                                    <a href="#" target="_blank">
+                                        <i class="fab fa-pinterest-p"></i>
+                                    </a>
+                                </div>
+                                <div class="lorada-social-button email-icon">
+                                    <a href="#" target="_blank">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- product  section / -->
+    <!-- product  section / -->
+    <!-- product  section / -->
+    <!-- Related product  section / -->
+    <section class="Relatedproduct overflow-h ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 tab-container">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item tab-item" role="presentation">
+                            <a class="nav-link active" style="border: none;" id="Description-tab" data-toggle="tab"
+                                href="#Description" role="tab" aria-controls="Description"
+                                aria-selected="true">Description</a>
+                        </li>
+                        <li class="nav-item tab-item" role="presentation">
+                            <a class="nav-link" id="ADDITIONALINFORMATION-tab" data-toggle="tab"
+                                href="#ADDITIONALINFORMATION" role="tab" aria-controls="ADDITIONALINFORMATION"
+                                aria-selected="false">ADDITIONAL INFORMATION
+                            </a>
+                        </li>
+                        <li class="nav-item tab-item" role="presentation">
+                            <a class="nav-link" id="REVIEWS-tab" data-toggle="tab" href="#REVIEWS" role="tab"
+                                aria-controls="REVIEWS" aria-selected="false">REVIEWS (3) </a>
+                        </li>
+                        <li class="nav-item tab-item" role="presentation">
+                            <a class="nav-link" id="SHIPPING-INFO-tab" data-toggle="tab" href="#SHIPPING-INFO"
+                                role="tab" aria-controls="SHIPPING-INFO" aria-selected="false">SHIPPING-INFO</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="Description" role="tabpanel"
+                            aria-labelledby="home-tab">
+                            <div class="productInfo">
+                                <h4 class="titleProductEducation ">Detail
+                                </h4>
+                                <p class="productEducation">
+                                    A jacket is generally lighter, tighter-fitting, & less insulating than a coat, which
+                                    is
+                                    outerwear. Some jackets are fashionable, while others serve as protective clothing.
+                                    Jackets without sleeves are vests.
+                                    <br>
+                                    <br>
+                                    The ten paintings depict impoverished scenes with lower-class figures wearing a
+                                    fabric
+                                    that looks like denim. The fabric would have been Genoese jean, which was cheaper.
+                                    Genre
+                                    painting came to prominence in late 16th century, and the non-nobility subject
+                                    matter in
+                                    all ten paintings places them among others that portray similar scenes.
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="card">
+                                            <img src="img/product-content-1.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="titleProductEducation">Features</h5>
+                                                <ul class="productEducation " style="    list-style-type: disc;">
+                                                    <li>The final steps of preparing jeans for market
+                                                    </li>
+                                                    <li>Checking the fit on a live model
+                                                    </li>
+                                                    <li>Quality checking and quality assurance
+                                                    </li>
+                                                    <li>Tacking on jeans (adds strength to high-stress areas).
+                                                    </li>
+                                                    <li>Jeans denim pants are displayed for the buyer in the RMG factory
+                                                        showroom
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="card">
+                                            <img src="img/product-content-2.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="titleProductEducation">Product Education
+                                                </h5>
+                                                <p class="productEducation ">
+                                                    Product and brand education introduces consumers to new brands.
+                                                    Product
+                                                    education is beyond product knowledge. With so many brands and
+                                                    options,
+                                                    we distill what matters to the customer at the demo.
+                                                    <br>
+                                                    <br>
+                                                    We have great relationships with our stores and they recognize the
+                                                    value
+                                                    we bring both in terms of increased sales and the in-store customer
+                                                    experience.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ADDITIONALINFORMATION" role="tabpanel"
+                            aria-labelledby="ADDITIONALINFORMATION-tab">
+                            <div class="row productInfo">
+                                <div class="col-lg-6 bold">COLOR
+                                </div>
+                                <div class="col-lg-6 card-text">Gray, Pink
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="REVIEWS" role="tabpanel" aria-labelledby="REVIEWS-tab">
+                            <div class="row productInfo">
+                                <div class="col-lg-6">
+                                    <h6 class="mt-5 mb-5">3 REVIEWS FOR 3 PACK OF SHINY SOCKS
+                                    </h6>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                                        <img src="img/avatar1.jpg"
+                                                            style="max-width: 80px ; max-height: 80px;" alt="...">
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                                        <div class="card-body" style="padding-top: 0px;">
+                                                            <div class="cardProductTitle" style="position: relative;">
+                                                                <p> <span> Admin</span> –
+                                                                    February 23, 2020 </span>
+                                                                <p>
+                                                                <div class="rating"
+                                                                    style="position: absolute;top:0;right: 0;">
+                                                                    <div class="Stars" rating="5" style="--rating:5;"
+                                                                        aria-label="Rating of this product is 5 out of 5.">
+                                                                    </div>
+                                                                </div>
+                                                                </span>
+                                                            </div>
+                                                            <p class="card-text">Indigestaque sunt ad sibi diu.
+                                                                Congeriem foret nullus oppida orbem! Peragebant dicere
+                                                                glomeravit nullaque bene frigida imagine.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                                        <img src="img/avatar2.jpg"
+                                                            style="max-width: 80px ; max-height: 80px;" alt="...">
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                                        <div class="card-body " style="padding-top: 0px;">
+                                                            <div class="cardProductTitle" style="position: relative;">
+                                                                <p> <span> Keven Feil</span> –
+                                                                    February 23, 2020 </span>
+                                                                <p>
+                                                                <div class="rating"
+                                                                    style="position: absolute;top:0;right: 0;">
+                                                                    <div class="Stars" rating="5" style="--rating:5;"
+                                                                        aria-label="Rating of this product is 5 out of 5.">
+                                                                    </div>
+                                                                </div>
+                                                                </span>
+                                                            </div>
+                                                            <p class="card-text">Orbem fontes terras dicere mentes uno
+                                                                ut nix aequalis. Melioris fecit tuti praeter litora
+                                                                grandia aer nullus manebat.
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                                        <img src="img/avatar3.jpg"
+                                                            style="max-width: 80px ; max-height: 80px;" alt="...">
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                                        <div class="card-body" style="padding-top: 0px;">
+                                                            <div class="cardProductTitle" style="position: relative;">
+                                                                <p> <span> Rene Tromp</span> –
+                                                                    February 23, 2020 </span>
+                                                                <p>
+                                                                <div class="rating"
+                                                                    style="position: absolute;top:0;right: 0;">
+                                                                    <div class="Stars" rating="5" style="--rating:5;"
+                                                                        aria-label="Rating of this product is 5 out of 5.">
+                                                                    </div>
+                                                                </div>
+                                                                </span>
+                                                            </div>
+                                                            <p class="card-text">Lucis habentem his. Coeperunt inminet
+                                                                circumfuso sine dixere. Primaque rapidisque reparabat
+                                                                fossae fontes porrexerat caecoque legebantur tollere.
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h6 class="mt-5 mb-5">ADD A REVIEW
+                                    </h6>
+                                    <p>Your email address will not be published. Required fields are marked<span
+                                            class="required">*</span>
+
+                                    </p>
+                                    <div class="comment-form-rating"><label for="rating">Your rating&nbsp;<span
+                                                class="required">*</span></label>
+                                        <p class="stars" style="display: inline;"> <span> <a class="star-1" href="#"><i
+                                                        class="fal fa-star"></i></a> <a class="star-2" href="#"><i
+                                                        class="fal fa-star"></i><i class="fal fa-star"></i></a> <a
+                                                    class="star-3" href="#"><i class="fal fa-star"></i><i
+                                                        class="fal fa-star"></i><i class="fal fa-star"></i></a> <a
+                                                    class="star-4" href="#"><i class="fal fa-star"></i><i
+                                                        class="fal fa-star"></i><i class="fal fa-star"></i><i
+                                                        class="fal fa-star"></i></a> <a class="star-5" href="#"><i
+                                                        class="fal fa-star"></i><i class="fal fa-star"></i><i
+                                                        class="fal fa-star"></i><i class="fal fa-star"></i><i
+                                                        class="fal fa-star"></i></a> </span> </p><select name="rating"
+                                            id="rating" required="" style="display: none;">
+                                            <option value="">Rate…</option>
+                                            <option value="5">Perfect</option>
+                                            <option value="4">Good</option>
+                                            <option value="3">Average</option>
+                                            <option value="2">Not that bad</option>
+                                            <option value="1">Very poor</option>
+                                        </select>
+                                    </div>
+                                    <p class="comment-form-comment"><label for="comment">Your review&nbsp;<span
+                                                class="required">*</span></label><textarea id="comment" class="txterea"
+                                            name="comment" cols="45" rows="8" required=""></textarea></p>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label for="email">Email&nbsp;<span
+                                                            class="required">*</span></label>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <input id="email" name="email" class="txterea2" type="email"
+                                                        value="" size="30" required="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label for="author">Name&nbsp;<span
+                                                            class="required">*</span></label>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <input id="name" name="name" class="txterea2" type="text" value=""
+                                                        size="30" required="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <P>Save my name, email, and website in this browser for the next time I comment.</P>
+                                    <div class="btn addProductToCart "><a href="#" role="button"><span
+                                                class="txt-label">submit</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="SHIPPING-INFO" role="tabpanel"
+                            aria-labelledby="SHIPPING-INFO-tab">
+                            <div class="row">
+                                <div class="col-lg-12 productInfo">
+                                    <p>Estimated shipping times throughout North America:
+                                    </p>
+                                    <div class="card mb-3">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4 col-sm-6 col-xs-6">
+                                                <img src="img/shipping.jpg" alt="...">
+                                            </div>
+                                            <div class="col-md-8 col-sm-6 col-xs-6">
+                                                <div class="card-body ml-5" style="padding-top: 0px;">
+                                                    <div class="cardProductTitle" style="position: relative;">
+                                                        <p> <span class="bold"> Shipping Type: </span>
+                                                            Standard Ground
+                                                        </p>
+                                                        <p> <span class="bold"> Cost: </span>
+                                                            Free
+                                                        </p>
+                                                        <p> <span class="bold"> Estimated Delivery Time: </span>
+                                                            Product will delivery in 4-6 business hours
+                                                        </p>
+                                                        <p class="card-text">
+                                                            Non sive caeli fulminibus dixere formaeque radiis cognati.
+                                                            Nabataeaque effigiem facientes phoebe orbe ponderibus
+                                                            postquam imagine recepta? Capacius sive sidera pluviaque
+                                                            effervescere terrarum. Fossae quem convexi inclusum nova
+                                                            tepescunt metusque illic sidera. Mare recessit hunc quin?
+                                                            Emicuit naturae campoque scythiam dedit habentem levius!
+                                                            <br>
+                                                            <br>
+                                                            Pondere aequalis erat: regio caesa otia videre principio.
+                                                            Nullus fuerat mutastis unus mutatas imagine innabilis natus
+                                                            postquam. Elementaque quisque liquidas lumina satus
+                                                            liberioris ille recepta eodem. Locum diremit iussit. Grandia
+                                                            pronaque onerosior! Levius terra habitabilis. Fert sine
+                                                            origo campos ulla tollere erat quam.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p> * Excludes all Mexico and International orders. Please see Contact Page for
+                                        International shipping policies.
+
+
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-12">
+                    <h2 class="titlsProductRelated">RELATED PRODUCTS</h2>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 xs-12 ProductCartona item accessories men"
+                            data-search-term="Watch">
+                            <div class="card item-card postion-r overflow-h" id="item-card-9">
+                                <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/13">
+                                    <img src="img/13a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                    <img src="img/13b.jpg" class="cardImgHide " alt="...">
+                                    <div class="imageData display-n" data-image-one="img/13a.jpg"
+                                        data-image-two="img/13b.jpg" data-image-three="img/13c.jpg"
+                                        data-image-four="img/13d.jpg"></div>
+                                    <div class="icons ">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-click-state="0" class="add-to-wishlist"><i
+                                                        class="far fa-heart"></i></a>
+                                                <span class="txt-icon-label">Wishlist</span>
+                                            </li>
+                                            <li>
+                                                <a href="#cartModal" role="button" data-toggle="modal"
+                                                    data-click-state="0" class="add-to-cart"><i
+                                                        class="fal fa-shopping-bag"></i></a>
+                                                <span class="txt-icon-label">Select options</span>
+                                            </li>
+                                            <li>
+
+                                                <a href="#"><i class="fas fa-sync"></i></a>
+                                                <span class="txt-icon-label">Compare</span>
+                                            </li>
+                                            <li>
+
+                                                <a href="#"><i class="fas fa-eye"></i></a>
+                                                <span class="txt-icon-label">Quick View</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body pl-0 pb-2">
+                                    <div class="item-info">
+                                        <p class="mb-0">
+                                            <a href="#">Accessories</a>
+                                            <span>,</span>
+                                            <a href="#">Men</a>
+                                        </p>
+                                    </div>
+                                    <h5 class="card-title"> <a href="#" class="product-link productName"
+                                            style="font-size: 14px;font-family: Poppins;">Silver Coloured
+                                            Watch</a></h5>
+                                    <div class="product-rating-price">
+                                        <div class="price-content  ">
+                                            <span class="Price-amount price amount">
+                                                <span class="Price-currencySymbol">£</span> <bdi>40.00</bdi>
+                                            </span>
+                                        </div>
+                                        <div class="product-rating postion-hb ">
+                                            <div class="Stars" rating="5" style="--rating:5;"
+                                                aria-label="Rating of this product is 5 out of 5.">
+                                            </div>
+                                        </div>
+                                        <div class="prodect-disc display-n">
+                                            <p>Nulli parte cesserunt fronde finxit manebat proximus dominari
+                                                frigida. Tempora sibi non dei plagae effervescere vis toto! Cornua
+                                                tuba spisso traxit. Tum terris gravitate effigiem! Turba volucres
+                                                extendi umentia sectamque nullo diverso inminet omni. Tollere
+                                                zephyro ultima phoebe nabataeaque diverso posset: rudis coercuit.
+                                            </p>
+                                        </div>
+                                        <div class="btn  btn-selct"><a href="#cartmodal" role="button"
+                                                data-toggle="modal" data-click-state="0" class="add-to-cart"><span
+                                                    class="txt-label">Select
+                                                    options</span><span class="shopping-bag-icon"><i
+                                                        class="fal fa-shopping-bag"></i></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 xs-12  ProductCartona item accessories Shoes Women  "
+                            data-search-term="Trainers">
+                            <div class="card  item-card postion-r overflow-h" id="item-card-10">
+                                <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/9">
+                                    <img src="img/9a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                    <img src="img/9d.jpg" class="cardImgHide " alt="...">
+                                    <div class="imageData display-n" data-image-one="img/9a.jpg"
+                                        data-image-two="img/9b.jpg" data-image-three="img/9c.jpg"
+                                        data-image-four="img/9d.jpg"></div>
+                                    <div class="product-flashs">
+                                        <span class="onsale product-flash">-20%</span>
+                                        <span class="featured product-flash">Hot</span>
+                                    </div>
+                                    <div class="icons ">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-click-state="0" class="add-to-wishlist"><i
+                                                        class="far fa-heart"></i></a>
+                                                <span class="txt-icon-label">Wishlist</span>
+                                            </li>
+                                            <li>
+                                                <a href="#cartModal" role="button" data-toggle="modal"
+                                                    data-click-state="0" class="add-to-cart"><i
+                                                        class="fal fa-shopping-bag"></i></a>
+                                                <span class="txt-icon-label">Select options</span>
+                                            </li>
+                                            <li>
+
+                                                <a href="#"><i class="fas fa-sync"></i></a>
+                                                <span class="txt-icon-label">Compare</span>
+                                            </li>
+                                            <li>
+
+                                                <a href="#"><i class="fas fa-eye"></i></a>
+                                                <span class="txt-icon-label">Quick View</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body pl-0 pr-0  pb-2">
+                                    <div class="timer-container" id="timer">
+                                        <div class="timer timer-day ml-0" id="days-4"></div>
+                                        <div class="timer timer-hours" id="hours-4"></div>
+                                        <div class="timer timer-minutes" id="minutes-4"></div>
+                                        <div class="timer timer-seconds" id="seconds-4"></div>
+                                    </div>
+                                    <div class="item-info">
+                                        <p class="mb-0">
+                                            <a href="#">Accessories</a>
+                                            <span>,</span>
+                                            <a href="#">Women</a>
+                                        </p>
+                                    </div>
+                                    <h5 class="card-title"> <a href="#" class="product-link productName"
+                                            style="font-size: 14px;font-family: Poppins;">White Lace Up
+                                            Trainers</a></h5>
+                                    <div class="product-rating-price">
+                                        <div class="price-content  ">
+                                            <span class="Price-amount price amount">
+                                                <span class="Price-currencySymbol">£</span> <bdi>32.00</bdi>
+                                            </span>
+                                            <span class="Price-amount discountPrice amount">
+                                                <span class="Price-currencySymbol">£</span><del>40.00</del>
+                                            </span>
+                                        </div>
+                                        <div class="product-rating postion-hb ">
+                                            <div class="Stars" rating="4.50" style="--rating:4.50;"
+                                                aria-label="Rating of this product is 4.50 out of 5.">
+                                            </div>
+                                        </div>
+                                        <div class="prodect-disc display-n">
+                                            <p>Colebat fuerat finxit fecit dicere locum iapeto. Diremit divino
+                                                librata. Foret aestu faecis caelo nitidis tonitrua aquae otia. Natus
+                                                passim instabilis orba. Semina inclusum utramque animal vesper
+                                                iussit prima aliud terrenae! Proxima locum valles consistere austro
+                                                ventis. Magni suis hunc acervo supplex caeleste.
+                                        </div>
+                                        <div class="btn  btn-selct"><a href="#cartmodal" role="button"
+                                                data-toggle="modal" data-click-state="0" class="add-to-cart"><span
+                                                    class="txt-label">Select
+                                                    options</span><span class="shopping-bag-icon"><i
+                                                        class="fal fa-shopping-bag"></i></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 xs-12 ProductCartona item  babyGirl "
+                            data-search-term="LeatherPlimsolls">
+                            <div class="card  item-card postion-r overflow-h" id="item-card-13">
+                                <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/17">
+                                    <img src="img/17a.jpg" class="card-img-show" alt="...">
+                                    <img src="img/17b.jpg" class="cardImgHide " alt="...">
+                                    <div class="imageData display-n" data-image-one="img/17a.jpg"
+                                        data-image-two="img/17b.jpg" data-image-three="img/17c.jpg"
+                                        data-image-four="img/17d.jpg"></div>
+                                    <div class="product-flashs">
+                                        <span class="featured product-flash">Hot</span>
+                                    </div>
+                                    <div class="icons ">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-click-state="0" class="add-to-wishlist"><i
+                                                        class="far fa-heart"></i></a>
+                                                <span class="txt-icon-label">Wishlist</span>
+                                            </li>
+                                            <li>
+                                                <a href="#cartModal" role="button" data-toggle="modal"
+                                                    data-click-state="0" class="add-to-cart"><i
+                                                        class="fal fa-shopping-bag"></i></a>
+                                                <span class="txt-icon-label">Select options</span>
+                                            </li>
+                                            <li>
+
+                                                <a href="#"><i class="fas fa-sync"></i></a>
+                                                <span class="txt-icon-label">Compare</span>
+                                            </li>
+                                            <li>
+
+                                                <a href="#"><i class="fas fa-eye"></i></a>
+                                                <span class="txt-icon-label">Quick View</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body pl-0 pb-2">
+                                    <div class="item-info">
+                                        <p class="mb-0">
+                                            <a href="#">Baby Girl</a>
+                                            <span>,</span>
+                                            <a href="#">Shoes</a>
+                                        </p>
+                                    </div>
+                                    <h5 class="card-title"> <a href="#" class="product-link productName"
+                                            style="font-size: 14px;font-family: Poppins;">Leather
+                                            Plimsolls</a></h5>
+                                    <div class="product-rating-price">
+                                        <div class="price-content  ">
+                                            <span class="Price-amount price amount">
+                                                <span class="Price-currencySymbol">£</span> <bdi>33.29</bdi>
+                                            </span>
+                                        </div>
+                                        <div class="product-rating postion-hb ">
+                                            <div class="Stars" rating="4.67" style="--rating:4.67;"
+                                                aria-label="Rating of this product is 4.67 out of 5.">
+                                            </div>
+                                        </div>
+                                        <div class="prodect-disc display-n">
+                                            <p>Nebulas caeca. Igni sole nam haec parte quod? Limitibus iners homini
+                                                mutatas forma tonitrua. Declivia fontes sed animus cognati. Origo
+                                                coercuit mea instabilis obliquis satus ab ante. Ut flamma crescendo
+                                                mundo vultus origine illis diversa? Ultima nisi quisque utque
+                                                colebat ultima aberant mollia.
+                                            </p>
+                                        </div>
+                                        <div class="btn  btn-selct"><a href="#cartmodal" role="button"
+                                                data-toggle="modal" data-click-state="0" class="add-to-cart"><span
+                                                    class="txt-label">Select
+                                                    options</span><span class="shopping-bag-icon"><i
+                                                        class="fal fa-shopping-bag"></i></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 xs-12 ProductCartona item accessories men "
+                            data-search-term="FlapBackpack">
+                            <div class="card item-card postion-r overflow-h" id="item-card-11">
+                                <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/14">
+                                    <img src="img/14a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                    <img src="img/14b.jpg" class="cardImgHide " alt="...">
+                                    <div class="imageData display-n" data-image-one="img/14a.jpg"
+                                        data-image-two="img/14b.jpg" data-image-three="img/14c.jpg"
+                                        data-image-four="img/14d.jpg"></div>
+                                    <div class="product-flashs">
+                                        <span class="featured product-flash">Hot</span>
+                                    </div>
+                                    <div class="icons ">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-click-state="0" class="add-to-wishlist"><i
+                                                        class="far fa-heart"></i></a>
+                                                <span class="txt-icon-label">Wishlist</span>
+                                            </li>
+                                            <li>
+                                                <a href="#cartModal" role="button" data-toggle="modal"
+                                                    data-click-state="0" class="add-to-cart"><i
+                                                        class="fal fa-shopping-bag"></i></a>
+                                                <span class="txt-icon-label">Select options</span>
+                                            </li>
+                                            <li>
+
+                                                <a href="#"><i class="fas fa-sync"></i></a>
+                                                <span class="txt-icon-label">Compare</span>
+                                            </li>
+                                            <li>
+
+                                                <a href="#"><i class="fas fa-eye"></i></a>
+                                                <span class="txt-icon-label">Quick View</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body pl-0 pb-2">
+                                    <div class="item-info">
+                                        <p class="mb-0">
+                                            <a href="#">Accessories</a>
+                                            <span>,</span>
+                                            <a href="#">Men</a>
+                                        </p>
+                                    </div>
+                                    <h5 class="card-title"> <a href="#" class="product-link productName"
+                                            style="font-size: 14px;font-family: Poppins;">Grey Flap Backpack
+                                            Straps</a>
+                                    </h5>
+                                    <div class="product-rating-price">
+                                        <div class="price-content  ">
+                                            <span class="Price-amount price amount">
+                                                <span class="Price-currencySymbol">£</span> <bdi>45.00</bdi>
+                                            </span>
+                                        </div>
+                                        <div class="product-rating postion-hb ">
+                                            <div class="Stars" rating="5" style="--rating:5;"
+                                                aria-label="Rating of this product is 5 out of 5.">
+                                            </div>
+                                        </div>
+                                        <div class="prodect-disc display-n">
+                                            <p>Divino circumfluus. Quod inminet fuit coeperunt. Humanas in oppida os
+                                                natura terris naturae. Nam terrenae igni mixta onerosior diversa
+                                                lege elementaque. Alta fuerant liquidum erant tollere campoque! Mea
+                                                mentes rudis imagine declivia mea fratrum. Posset: pro est naturae
+                                                exemit tempora addidit homini animalia.
+                                            </p>
+                                        </div>
+                                        <div class="btn  btn-selct"><a href="#cartmodal" role="button"
+                                                data-toggle="modal" data-click-state="0" class="add-to-cart "><span
+                                                    class="txt-label">Select
+                                                    options</span><span class="shopping-bag-icon"><i
+                                                        class="fal fa-shopping-bag"></i></span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Related product  section / -->
+    <!-- footer  section / -->
+    <footer class="">
+        <div class="footerContainer pt-10 pl-20 pr-20 pb-10">
+            <div class="row subscribe">
+                <div class="col-lg-1 col-md-1">
+                    <div>
+                        <h4 class="formHeader">Newsletter</h4>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+
+                    <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-831" method="post" data-id="831"
+                        data-name="Newsletter">
+                        <div class="mc4wp-form-fields">
+                            <div class="newsletter-form">
+                                <input type="email" name="EMAIL" placeholder="Enter your email address..." required="">
+                                <input type="submit" class="lorada-btn medium" value="SUBSCRIBE">
+                            </div>
+                        </div>
+                        <label style="display: none !important;">Leave this field empty if you're human: <input
+                                type="text" name="_mc4wp_honeypot" value="" tabindex="-1"
+                                autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp"
+                            value="1631207157"><input type="hidden" name="_mc4wp_form_id" value="831"><input
+                            type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
+                        <div class="mc4wp-response"></div>
+                    </form>
+                </div>
+                <div class="col-lg-4 col-md-4 icon-body">
+                    <div class="title">
+                        <span class="heading-title ">Follow Us:</span>
+                    </div>
+                    <div class="social-icons">
+                        <div class="icon">
+                            <a class="social-icon icon-facebook-f " target="_blank">
+                                <i class="fab fa-facebook-f"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class=" social-icon twitter " target="_blank">
+                                <i class="fab fa-twitter"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class=" social-icon pinterest-p " target="_blank">
+                                <i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                        <div class=" icon">
+                            <a class="google-plus-g " target="_blank">
+                                <i class="social-icon fab fa-google-plus-g"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class="instagram" target="_blank">
+                                <i class="social-icon fab fa-instagram"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class="youtube " target="_blank">
+                                <i class="social-icon fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-12">
+                        <div class="links-header">Find It Fast</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="linkiteam"><a href="#"><span>New In</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Best Seller</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Clothing</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Men</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Women</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Baby Girl</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Baby Boys</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Accessories</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Shoes</span></a></li>
+                                <li class="linkiteam"><a href="#"><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-12">
+                        <div class="links-header" style="visibility: hidden;">d</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="linkiteam"><a href="#"><span>T-Shirts</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Shirts</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Bags</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Dresses</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Jeans</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Shorts</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Blouses & Shirts</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Blazers</span></a></li>
+                                <li class="linkiteam"><a href="#"><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="col-lg-12">
+                        <div class="links-header">My Account</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="linkiteam"><a href="#"><span>My Account</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>My Wishlist</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Compare Products</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Discount</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Track Order</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Shop</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>About Us</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>Returns/Exchange</span></a></li>
+                                <li class="linkiteam"><a href="#"><span>FAQs</span></a></li>
+                                <li class="linkiteam"><a href="#"><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="links-header">Contact Us</div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="iteamSpan"><span class="spanicon"><i
+                                            class="fas fa-headphones-alt"></i></span><span class="textspan"> Got
+                                        Question? Call Us 24/7</span></li>
+                                <li class="iteamSpan"><span class="textonly">(364) 106 7572 <span class="betweentext">or
+                                        </span> (052) 611 5711</span></li>
+                                <li class="iteamSpan"><span class="spanicon"><i class="far fa-building"></i></span><span
+                                        class="textspan"> 3801 Chalk Butte Rd, Cutbank, Montana, USA</span></li>
+                                <li class="iteamSpan"><span class="spanicon"><i
+                                            class="far fa-envelope-open"></i></span><span class="textspan">
+                                        contact@lorada.com</span></li>
+                                <li class="iteamSpan"><span class="spanicon"><i class="far fa-clock"></i></span><span
+                                        class="textspan"> Work time:</span></li>
+                                <li class="iteamSpan"><span class="daysOpenTime">Mon - Sat: 9:00AM -6:00PM | Sunday:
+                                        Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row copyRightlayer">
+                <div class="col-lg-6 col-md-6 ">
+                    <div class="copyRight">
+                        © 2019 Lorada. All Rights Reserved.
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 payment">
+                    <div class="payment">
+                        <div class="paymentImg">
+                            <img src="img/payment_logo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- footer  section / -->
+    <!--script js -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.simplePagination.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.mixitup.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script type="text/javascript" src="databse/product.json"></script>
+    <script src="js/main.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>

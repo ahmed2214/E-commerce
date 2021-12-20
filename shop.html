@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <!--css links -->
+    <link rel="icon" href="img/tab-icon.png" type="image/png" sizes="16x16">
+    <link rel="pingback" href="https://lorada.c-themes.com/fashion-modern/xmlrpc.php">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/animate.compat.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/simplePagination.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<template id="range-slider">
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+
+		*::selection {
+			background: #fff;
+		}
+
+		*::-moz-selection {
+			background: #fff;
+		}
+
+		.container::selection {
+			background: #000;
+			/* Safari */
+		}
+
+		.container {
+			width: 10vw;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
+		.wrap {
+			width: 200px;
+			margin: 0 auto;
+		}
+
+		.slider-header-box {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.calculate-header-box-title {
+			font-size: 18px;
+		}
+
+		.calculate-header-box-value {
+			color: #222;
+			font-size: 18px;
+		}
+
+		.slider {
+			margin-bottom: 20px;
+		}
+
+		.slider-slider {
+			position: relative;
+			margin-bottom: 5px;
+			padding: 5px;
+		}
+
+		.slider-slider-item {
+			display: block;
+			width: 100%;
+			height: 4px;
+			margin-top: 10px;
+			border-radius: 2px;
+			margin-bottom: 10px;
+			background: #666;
+			position: relative;
+		}
+
+		.slider-slider-touch {
+			cursor: pointer;
+			margin-top: -22px;
+			position: absolute;
+			z-index: 100;
+			background: #FFFFFF;
+			border: 5px solid #c33;
+			border-radius: 100%;
+			width: 20px;
+			height: 20px;
+			display: block;
+			box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.44);
+		}
+        .btnPriceFilter
+{
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 20px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: #222 !important;
+    order: 2;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+	</style>
+	<div class="container">
+		<div class="wrap">
+			<div class="slider">
+				<div class="slider-slider" id="slider-container">
+					<span class="slider-slider-item" id="slider-item"></span>
+					<span class="slider-slider-touch" data-value="min"></span>
+					<span class="slider-slider-touch" data-value="max"></span>
+				</div>
+                <div class="slider-header-box">
+					<span class="calculate-header-box-title">X</span>
+					<span class="calculate-header-box-value" id="slider-value-min">0</span>
+					<span class="calculate-header-box-value" id="slider-value-max">0</span>
+                    <a href="#0" class="btn btnPriceFilter" id="btnPriceFilter">Filter</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<body>
+    <!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">SUBSCRIBE NOW </h6>
+                                <h5 class="card-title">and get 30% off new collection</h5>
+                                <p class="card-text">Subscribe to the Lorada mailing list to receive updates on
+                                    newarrivals, specialoffers and our promotions. </p>
+                                <input type="email" name="EMAIL" placeholder="Enter your email address..." required=""
+                                    class="emailInput">
+                                <a href="#0" class="btn btn-model">SUBSCRIBE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="modal-hide" href="#0" onclick=" enableScroll()">✕</a>
+        </div>
+    </div>
+    <!------------------------------->
+    <!-- Modal -->
+    <!-- Modal -->
+    <div class="modal left fade fadeleftModal " id="navModal" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel2">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content fadeleft">
+
+                <div class="modal-header modal-header-left ">
+                    <button type="button" class="close  closeModalRight" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true"><span class="closeTitel">Close</span> &times;</span></button>
+                </div>
+<div class=" product-item">
+                <div class="col-lg-12">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12 " >
+                                <div class="col-lg-12">
+                                    <h2 class="categoriyTitle">
+                                        categories
+                                    </h2>
+                                    <ul class="product-categories">
+                                        <li class="cat-item filter-btn " id="accessories" data-click-state="0"  data-filter=".accessories"><a href="#0">Accessories</a> <span class="count">9</span></li>
+                                        <li class="cat-item filter-btn " id="babyBoy" data-click-state="0"data-filter=".babyBoy"><a href="#0">Baby Boy</a> <span class="count">2</span></li>
+                                        <li class="cat-item filter-btn " id="babyGirl" data-click-state="0" data-filter=".babyGirl"><a href="#0">Baby Girl</a> <span class="count">3</span></li>
+                                        <li class="cat-item filter-btn " id="jacket" data-click-state="0" data-filter=".jacket"><a href="#0">Jacket</a> <span class="count">1</span></li>
+                                        <li class="cat-item filter-btn " id="men" data-click-state="0" data-filter=".men"><a href="#0">Men</a> <span class="count">5</span></li>
+                                        <li class="cat-item filter-btn " id="shirt" data-click-state="0" data-filter=".shirt"><a href="#0">Shirt</a> <span class="count">8</span></li>
+                                        <li class="cat-item filter-btn " id="Shoes" data-click-state="0" data-filter=".Shoes"><a href="#0">Shoes</a> <span class="count">4</span></li>
+                                        <li class="cat-item filter-btn " id="Women" data-click-state="0"data-filter=".Women"><a href="#0">Women</a> <span class="count">8</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h2 class="categoriyTitle">
+                                        FILTER BY PRICE
+                                    </h2>
+                                    <div class="slider-box">
+                                        <range-slider minValue="0" maxValue="70" startMinPos="0" startMaxPos="70" um="$" title="Price: "></range-slider>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h2 class="categoriyTitle">
+                                        categories
+                                    </h2>
+                                    <ul class="product-categories">
+                                        <li class="cat-item filter-btn " id="blackHeadband" data-click-state="0" data-filter=".blackHeadband"><a class="filter-swatch-color-link" href="#0">
+                                                <div class="filter-swatch-color-img-contanir"><img class="filter-swatch-color-img"
+                                                        src="img/2g.jpg"></div><span>Black Headband</span>
+                                            </a> <span class="count">1</span></li>
+                                        <li class="cat-item filter-btn " id="brownHeadband" data-click-state="0" data-filter=".brownHeadband"><a class="filter-swatch-color-link" href="#0">
+                                                <div class="filter-swatch-color-img-contanir"><img class="filter-swatch-color-img"
+                                                        src="img/2b.jpg"></div><span>Brown Headband</span>
+                                            </a> <span class="count">1</span></li>
+                                        <li class="cat-item filter-btn " id="Gray" data-click-state="0" data-filter=".Gray"><a href="#0"><span class="swatch-inner"><span
+                                                        class="filter-swatch"><span class="closeIcone display-n"><i class="fal fa-times"></i></span><span class="filter-swatch-color"></span></span><span
+                                                        class="layer-term-name">Gray</span></span></a> <span class="count">1</span>
+                                        </li>
+                                        <li class="cat-item filter-btn " id="pinkfilter" data-click-state="0" data-filter=".Pink"><a href="#0"><span class="swatch-inner"><span
+                                                        class="filter-swatch"><span class="closeIcone display-n"><i class="fal fa-times"></i></span><span class="filter-swatch-color"
+                                                            style="background-color: #d25752 !important;"></span></span><span
+                                                        class="layer-term-name">Pink</span></span></a> <span class="count">1</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h2 class="categoriyTitle">
+                                        Size
+                                    </h2>
+                                    <ul class="product-categories">
+                                        <li class="cat-item filter-btn " id="larg" data-click-state="0" data-click-state="0" data-filter=".larg"><a href="#0">L</a> <span class="count">4</span></li>
+                                        <li class="cat-item filter-btn " id="medium" data-click-state="0" data-click-state="0" data-filter=".medium"><a href="#0">M</a> <span class="count">4</span></li>
+                                        <li class="cat-item filter-btn " id="xlarg" data-click-state="0" data-click-state="0" data-filter=".xlarg"><a href="#0">Xl</a> <span class="count">4</span></li>
+                                        <li class="cat-item filter-btn " id="xxlarg" data-click-state="0" data-click-state="0" data-filter=".xxlarg"><a href="#0">XXL</a> <span class="count">4</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h2 class="categoriyTitle">
+                                        TOP RATED
+                                    </h2>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="card mb-3">
+                                                <div class="row no-gutters topRatedItem  pb-3 pt-3">
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent">
+                                                        <img src="img/1a.jpg" style="width: 80px;height: 80px;">
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="card-body pt-0">
+                                                            <h5 class="card-title top-rated-title">Drawstring <br> Bermuda Shorts
+                                                            </h5>
+            
+                                                            <div class="Stars" rating="4.67" style="--rating:5;"
+                                                                aria-label="Rating of this product is 5 out of 5">
+                                                            </div>
+                                                            <span class="ratingPepole">(2)</span>
+                                                            <div class="price-content price-top-rated  ">
+                                                                <span class="Price-amount price amount">
+                                                                    <span class="Price-currencySymbol">£</span> <bdi>36.99</bdi>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="card mb-3">
+                                                <div class="row no-gutters topRatedItem  pb-3 pt-3">
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent">
+                                                        <img src="img/16a.jpg" style="width: 80px;height: 80px;">
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="card-body pt-0">
+                                                            <h5 class="card-title top-rated-title">Drawstring Hoodie</h5>
+            
+                                                            <div class="Stars" rating="4.67" style="--rating:5;"
+                                                                aria-label="Rating of this product is 5 out of 5.">
+                                                            </div>
+                                                            <span class="ratingPepole">(2)</span>
+                                                            <div class="price-content price-top-rated ">
+                                                                <span class="Price-amount price amount">
+                                                                    <span class="Price-currencySymbol">£</span> <bdi>18.99</bdi>
+                                                                </span>
+                                                                <span class="Price-amount discountPrice amount">
+                                                                    <span class="Price-currencySymbol">£</span><del>20.00</del>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="card mb-3">
+                                                <div class="row no-gutters  pb-3 pt-3 ">
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent">
+                                                        <img src="img/2b.jpg" style="width: 80px;height: 80px;">
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="card-body pt-0">
+                                                            <h5 class="card-title top-rated-title">Polka Dot <br> Headband</h5>
+            
+                                                            <div class="Stars" rating="4.67" style="--rating:5;"
+                                                                aria-label="Rating of this product is 5 out of 5.">
+                                                            </div>
+                                                            <span class="ratingPepole">(2)</span>
+                                                            <div class="price-content price-top-rated ">
+                                                                <span class="Price-amount price amount">
+                                                                    <span class="Price-currencySymbol">£</span> <bdi>36.99</bdi>
+                                                                </span>
+                                                                <span class="Price-amount discountPrice amount">
+                                                                    <span class="Price-currencySymbol">£</span><del>45.99</del>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div>
+    <div class="modal right fade fadeRightModal " id="cartModal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content fadeRight">
+
+            <div class="modal-header modal-header-right ">
+                <button type="button" class="close closeModal" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="modal-body">
+                    <table class="showcart-right table mb-50" >
+                    </table>
+                    <p class="mini-cart-total total">
+                        <strong class="subtotalModal">Subtotal:</strong> <span class="Price-amount-modal amount"><bdi>
+                            <span class="cartPrice " style="font-size: 24px !important;">£</span>
+                            <span class="total-cart cartPrice"  style="font-size: 24px !important;">0</span>
+                        </bdi></span>
+                    </p>
+                    <div class="mini-cart-buttons buttons">
+                        <a href="cart.html" class="btn viewCart-button ">View cart</a>
+                        <a href="checkout.html" class="btn checkout-button ">Checkout</a>
+                        </div>
+                </div>
+            </div>
+
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div>
+
+    <!-- modal -->
+    <!---model / -->
+    <!--Header  -->
+    <header class="navbars ">
+        <div class="topbar-container overflow-h">
+            <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs navbar-light topnav  ">
+                <ul class="navbar-nav ml-5 mt-3 topNavUl">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle line-after" href="#0" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            English
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#0">German</a>
+                            <a class="dropdown-item" href="#0">Dutch</a>
+                            <a class="dropdown-item" href="#0">French</a>
+                            <a class="dropdown-item" href="#0">Italian</a>
+                            <a class="dropdown-item" href="#0">Japanese</a>
+                            <a class="dropdown-item" href="#0">Russian</a>
+                            <a class="dropdown-item" href="#0">Spanish</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown curance">
+                        <a class="nav-link dropdown-toggle line-after" href="#0" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            USD
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#0">EUR</a>
+                            <a class="dropdown-item" href="#0">INR</a>
+                            <a class="dropdown-item" href="#0">GBP</a>
+                            <a class="dropdown-item" href="#0">CAD</a>
+                            <a class="dropdown-item" href="#0">AUD</a>
+                            <a class="dropdown-item" href="#0">JPY</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link topNavline-after line-after">Free Shipping For All Orders Of $200</p>
+                    </li>
+                </ul>
+                <div class=" navbar-collapse secondTopNavUl" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item  track">
+                            <a class="nav-link line-after" href="#0">Track Your Order <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item Newsletter">
+                            <a class="nav-link line-after" href="#modal" onclick="disableScroll() "><i
+                                    class="fas fa-envelope"></i>
+                                Newsletter</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link line-after beforFacebook" href="#0"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-google-plus-g"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#0"><i class="fab fa-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header-container-Brand">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <form class="d-flex">
+                    <span> <i class="far fa-search"></i></span>
+                    <input class="form-control mr-2 search searchForm" data-search type="search"
+                        placeholder="Search for Prodects..." aria-label="Search">
+                </form>
+
+                <div class=" navbar-collapse icon-logo " id="navbarScroll">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0 " style="max-height: 100px;">
+                        <li class="nav-item  icon " id="navbarScroll-icon">
+                            <a class="navbar-brand m-auto " href="index.html"><img src="img/logo.png"
+                                    alt="Lorada – Fashion Modern" srcset=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" navbar-collapse  " id="navbarScroll">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#0"><i class="far fa-user"></i></a>
+                        </li>
+                        <li class="nav-item icon-nav wishlistli">
+                            <a class="nav-link favourite" href="wishlist.html"><i class="far fa-heart"></i><span
+                                    class="addToFavourite total-count-wishlist">0</span></a>
+                        </li>
+                        <li class="nav-item cartli">
+                            <a class="nav-link cart" href="#cartModal" role="button" data-toggle="modal"
+                           ><i class="fas fa-shopping-bag"><span
+                                        class="addToCart  total-count">0</span></i></a>
+                        </li>
+                        <li class="nav-item Basketli">
+                            <a class="nav-link cart" href="#0">
+                                <span class="Basket"> Basket:£</span><bdi
+                                    class="total-cart basket-cash">437.21</bdi></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--header-container-links / -->
+        <div class="header-container-links">
+            <nav class="navbar navbar-expand-lg navbar-light scroll-nav scroll-navagition ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-home"></i></span>
+                                Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="shop.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-shopping-bag"></i></span> SHOP</a>
+                            <span class="sale">SALE!</span>
+                            <span class="marker-triangle"></i></span>
+                        </li>
+                        <li class="nav-item dropdown blogShow  ">
+                            <a class="nav-link dropdown-toggle line-after" onclick="window.location.href='blog.html'"
+                                id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <span class="link-icon pr-2"><img src="img/registration.svg" alt="registration-icon"
+                                        class="img-icon icon-1">
+                                    <img src="img/registration-1521660.svg" alt="registration-icon" style="width: 20px;"
+                                        class="img-icon icon-2"></span> Blog
+                            </a>
+                            <div class="dropdown-menu pb-0" aria-labelledby="navbarDropdownMenuLink"
+                                style="width:500px; ">
+                                <div class="row">
+                                    <div class="col-lg-4 pr-0">
+                                        <div class="card">
+                                            <div class="Link-group ">
+                                                <ul style="list-style: none;">
+                                                    <li class="nav-item"><a class="nav-link group-head" href="#0">Blog
+                                                            Layout</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">With
+                                                            Sidebar</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">List View</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">Masonry
+                                                            View</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 pr-0 ">
+                                        <div class="card ">
+                                            <div class="Link-group">
+                                                <ul>
+                                                    <li class="nav-item"><a class="nav-link group-head" href="#0">
+                                                            Post Layout</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">With
+                                                            Sidebar</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#0">Default
+                                                            Post</a></li>
+                                                    <li class="nav-item"><a class="nav-link"
+                                                            href="#0">BackstretchImage</a> </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 ">
+                                        <div class="card">
+                                            <img src="img/menu-bg1.png" alt="menu-bg1" style="height: 200px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- /2-cols dropdown -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-portrait"></i></span>
+                                ABOUT</a>
+                            <span class="new">NEW</span>
+                            <span class="marker-triangle marker-2"></i></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><span class="link-icon pr-2"><i
+                                        class="fas fa-shopping-bag"></i></span>
+                                CONTACT</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <div class="PerriodOffer">
+                <p>
+                    <a href="#0"> Sale Up To <span>50% Biggest Discounts.</span> Hurry! Limited Perriod Offer</a>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!--Header / -->
+    <!--page title / -->
+    <section class="page-title-section overflow-h  ">
+        <h1 class="page-title">Shop</h1>
+    </section>
+    <!--page title / -->
+    <section class="product-item  overflow-h">
+        <div class="product-item-container">
+            <div class="row">
+                <div class="col-lg-4 " style="padding: 0 30px 0 100px;">
+                    <div class="col-lg-12">
+                        <h2 class="categoriyTitle">
+                            categories
+                        </h2>
+                        <ul class="product-categories">
+                            <li class="cat-item filter-btn " id="accessories" data-click-state="0"  data-filter=".accessories"><a href="#0">Accessories</a> <span class="count">9</span></li>
+                            <li class="cat-item filter-btn " id="babyBoy" data-click-state="0"data-filter=".babyBoy"><a href="#0">Baby Boy</a> <span class="count">2</span></li>
+                            <li class="cat-item filter-btn " id="babyGirl" data-click-state="0" data-filter=".babyGirl"><a href="#0">Baby Girl</a> <span class="count">3</span></li>
+                            <li class="cat-item filter-btn " id="jacket" data-click-state="0" data-filter=".jacket"><a href="#0">Jacket</a> <span class="count">1</span></li>
+                            <li class="cat-item filter-btn " id="men" data-click-state="0" data-filter=".men"><a href="#0">Men</a> <span class="count">5</span></li>
+                            <li class="cat-item filter-btn " id="shirt" data-click-state="0" data-filter=".shirt"><a href="#0">Shirt</a> <span class="count">8</span></li>
+                            <li class="cat-item filter-btn " id="Shoes" data-click-state="0" data-filter=".Shoes"><a href="#0">Shoes</a> <span class="count">4</span></li>
+                            <li class="cat-item filter-btn " id="Women" data-click-state="0"data-filter=".Women"><a href="#0">Women</a> <span class="count">8</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <h2 class="categoriyTitle">
+                            FILTER BY PRICE
+                        </h2>
+                        <div class="slider-box">
+                            <range-slider minValue="0" maxValue="70" startMinPos="0" startMaxPos="70" um="$" title="Price: "></range-slider>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <h2 class="categoriyTitle">
+                            categories
+                        </h2>
+                        <ul class="product-categories">
+                            <li class="cat-item filter-btn " id="blackHeadband" data-click-state="0" data-filter=".blackHeadband"><a class="filter-swatch-color-link" href="#0">
+                                    <div class="filter-swatch-color-img-contanir"><img class="filter-swatch-color-img"
+                                            src="img/2g.jpg"></div><span>Black Headband</span>
+                                </a> <span class="count">1</span></li>
+                            <li class="cat-item filter-btn " id="brownHeadband" data-click-state="0" data-filter=".brownHeadband"><a class="filter-swatch-color-link" href="#0">
+                                    <div class="filter-swatch-color-img-contanir"><img class="filter-swatch-color-img"
+                                            src="img/2b.jpg"></div><span>Brown Headband</span>
+                                </a> <span class="count">1</span></li>
+                            <li class="cat-item filter-btn " id="Gray" data-click-state="0" data-filter=".Gray"><a href="#0"><span class="swatch-inner"><span
+                                            class="filter-swatch"><span class="closeIcone display-n"><i class="fal fa-times"></i></span><span class="filter-swatch-color"></span></span><span
+                                            class="layer-term-name">Gray</span></span></a> <span class="count">1</span>
+                            </li>
+                            <li class="cat-item filter-btn " id="pinkfilter" data-click-state="0" data-filter=".Pink"><a href="#0"><span class="swatch-inner"><span
+                                            class="filter-swatch"><span class="closeIcone display-n"><i class="fal fa-times"></i></span><span class="filter-swatch-color"
+                                                style="background-color: #d25752 !important;"></span></span><span
+                                            class="layer-term-name">Pink</span></span></a> <span class="count">1</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <h2 class="categoriyTitle">
+                            Size
+                        </h2>
+                        <ul class="product-categories">
+                            <li class="cat-item filter-btn " id="larg" data-click-state="0" data-click-state="0" data-filter=".larg"><a href="#0">L</a> <span class="count">4</span></li>
+                            <li class="cat-item filter-btn " id="medium" data-click-state="0" data-click-state="0" data-filter=".medium"><a href="#0">M</a> <span class="count">4</span></li>
+                            <li class="cat-item filter-btn " id="xlarg" data-click-state="0" data-click-state="0" data-filter=".xlarg"><a href="#0">Xl</a> <span class="count">4</span></li>
+                            <li class="cat-item filter-btn " id="xxlarg" data-click-state="0" data-click-state="0" data-filter=".xxlarg"><a href="#0">XXL</a> <span class="count">4</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <h2 class="categoriyTitle">
+                            TOP RATED
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card mb-3">
+                                    <div class="row no-gutters topRatedItem  pb-3 pt-3">
+                                        <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent">
+                                            <img src="img/1a.jpg" style="width: 80px;height: 80px;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body pt-0">
+                                                <h5 class="card-title top-rated-title">Drawstring <br> Bermuda Shorts
+                                                </h5>
+
+                                                <div class="Stars" rating="4.67" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5">
+                                                </div>
+                                                <span class="ratingPepole">(2)</span>
+                                                <div class="price-content price-top-rated  ">
+                                                    <span class="Price-amount price amount">
+                                                        <span class="Price-currencySymbol">£</span> <bdi>36.99</bdi>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="card mb-3">
+                                    <div class="row no-gutters topRatedItem  pb-3 pt-3">
+                                        <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent">
+                                            <img src="img/16a.jpg" style="width: 80px;height: 80px;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body pt-0">
+                                                <h5 class="card-title top-rated-title">Drawstring Hoodie</h5>
+
+                                                <div class="Stars" rating="4.67" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                                <span class="ratingPepole">(2)</span>
+                                                <div class="price-content price-top-rated ">
+                                                    <span class="Price-amount price amount">
+                                                        <span class="Price-currencySymbol">£</span> <bdi>18.99</bdi>
+                                                    </span>
+                                                    <span class="Price-amount discountPrice amount">
+                                                        <span class="Price-currencySymbol">£</span><del>20.00</del>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="card mb-3">
+                                    <div class="row no-gutters  pb-3 pt-3 ">
+                                        <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent">
+                                            <img src="img/2b.jpg" style="width: 80px;height: 80px;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body pt-0">
+                                                <h5 class="card-title top-rated-title">Polka Dot <br> Headband</h5>
+
+                                                <div class="Stars" rating="4.67" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                                <span class="ratingPepole">(2)</span>
+                                                <div class="price-content price-top-rated ">
+                                                    <span class="Price-amount price amount">
+                                                        <span class="Price-currencySymbol">£</span> <bdi>36.99</bdi>
+                                                    </span>
+                                                    <span class="Price-amount discountPrice amount">
+                                                        <span class="Price-currencySymbol">£</span><del>45.99</del>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row"></div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="shop-products-per-page mb-3 mt-3">
+                                <span class="per-page-title">Show</span>
+                                <a rel="nofollow" href="#0" class="per-page-variation contentAfter" id="items-9">
+                                    <span>9</span>
+                                </a>
+                                <a rel="nofollow" href="#0" class="per-page-variation contentAfter " id="items-24">
+                                    <span>24</span>
+                                </a>
+                                <a rel="nofollow" href="#0" class="per-page-variation " id="items-36">
+                                    <span>36</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="container-btn mb-3 mt-3 ">
+                                <button class="btn btn-grid ml-3 "><i class="fas fa-th"></i></button>
+                                <button class="btn btn-list "><i class="fas fa-list-ul"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="programs mb-3 mt-3">
+                                <div class="dropdown">
+                                    <button type="button" id="sortDropdownBtn"
+                                        class="btn btn-secondary dropdown-toggle sortselect" data-toggle="dropdown"
+                                        data-display="static" aria-haspopup="true" aria-expanded="false">
+                                        Default sorting <span></span>
+                                    </button>
+                                    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item sort-btn" data-sort="order" href="#0">Default sorting</a>
+                                        <a class="dropdown-item sort-btn" data-sort="popularity" href="#0">Sort by
+                                            popularity</a>
+                                        <a class="dropdown-item sort-btn" data-sort="rating" href="#0">Sort by average
+                                            rating</a>
+                                        <a class="dropdown-item sort-btn" data-sort="date" href="#0">Sort by latest</a>
+                                        <a class="dropdown-item sort-btn" data-sort="price" href="#0">Sort by price: low
+                                            to high</a>
+                                        <a class="dropdown-item sort-btn" data-sort="price:desc" href="#0">Sort by price:
+                                            high to low</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class=" grid-container ">
+                        <div class="row  " id="ProductsCotainer">
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item accessories babyGirl " data-search-term="Socks">
+                                <a href="product.html">
+                                <div class="card  item-card postion-r overflow-h" id="item-card-16">
+                                    <div class="card-img postion-r card-img-list  overflow-h card-img-list "
+                                        id="item-img-pinkShinySocks" date="2020/02/18">
+                                        <img src="img/18a.jpg" class="card-img-show" alt="...">
+                                        <img src="img/18c.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/18a.jpg"  data-image-two="img/18c.jpg" 
+                                        data-image-three="img/18b.jpg"  data-image-four="img/18d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-48%</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                    <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="row dotes-container pl-0 ml-0">
+                                            <div class="gray dotes">
+                                                <span class="txt-label">gray</span>
+                                            </div>
+                                            <div class="pink dotes" alt="img/18d.jpg" data-click-state="0"
+                                                id="pinkShinySocks">
+                                                <span class="txt-label">pink</span>
+                                                <div class="dotes doteBorderHide " id="doteBorder-pinkShinySocks">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Accessories</a>
+                                                <span>,</span>
+                                                <a href="#0"> Baby Girl</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName">3 Pack Of
+                                                Shiny
+                                                Socks</a></h5>
+
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>9.80</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>18.89</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="4.67" style="--rating:4.67;"
+                                                    aria-label="Rating of this product is 4.67 out of 5.">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="prodect-disc display-n">
+                                            <p>Dei campos securae ille fluminaque astra. Fuerant aere fert caelum
+                                                habitandae orbe.
+                                                Locis minantia indigestaque tum. Fontes ignotas utque pronaque prima
+                                                bracchia recens
+                                                rectumque mutastis. Partim unus. Mutatas litora quarum sed. Fulgura neu
+                                                iuga securae
+                                                subdita vos fluminaque. Litem neu silvas recens sectamque.
+                                            </p>
+                                        </div>
+                                         <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                    options</span><span class="shopping-bag-icon"><i
+                                                        class="fal fa-shopping-bag"></i></span></a></div>
+                                    </div>
+                                </div>
+                            </a> 
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item accessories Shoes " data-search-term="SneakersWith" >
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-18">
+                                    <div class="card-img postion-r card-img-list card-img-list overflow-h "
+                                        date="2020/02/11">
+                                        <img src="img/11a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/11b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/11a.jpg"  data-image-two="img/11b.jpg" 
+                                        data-image-three="img/11c.jpg"  data-image-four="img/11d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="featured product-flash">Hot</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Accessories</a>
+                                                <span>,</span>
+                                                <a href="#0">Shoes</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Brown Sneakers
+                                                With Patch</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>40.00</bdi>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                                <div class="prodect-rating-pepole">
+                                                    (2 customer reviews)
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Caligine pendebat exemit. Cepit descenderat locum madescit longo.
+                                                    Tanta illis mollia orbe adspirate omni mixta. Aberant viseret quae
+                                                    litora. Mutastis dedit. Astra manebat campoque aurea nubibus altae
+                                                    illi summaque lanient? Iners viseret melioris iuga. Deus illi in
+                                                    inclusum os orbe sectamque tegit diffundi.
+                                                    <br>
+                                                    <br>
+                                                    Quam freta secuit lege umentia sive? Phoebe omni effigiem ventis
+                                                    possedit. Rapidisque obliquis mare aliis tonitrua vindice
+                                                </p>
+                                            </div>
+                                            <div class="btn  btn-selct"><a href="#cartModal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item jacket Women larg medium xlarg xxlarg " data-search-term="Bermuda Shorts">
+                                <div class="card item-card  postion-r overflow-h" id="item-card-1">
+                                    <div class="card-img  postion-r card-img-list  overflow-h " date="2020/02/1"
+                                        id="item-img-pink-item">
+                                        <img src="img/1a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/1b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/1a.jpg"  data-image-two="img/1b.jpg" 
+                                        data-image-three="img/1c.jpg"  data-image-four="img/1d.jpg" data-image-five="img/1f.jpg"
+                                        data-image-six="img/1g.jpg" data-image-seven="img/1k.jpg" 
+                                        ></div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="row dotes-container pl-0 ml-0">
+                                            <div class="gray dotes "></div>
+                                            <div class="dotes pink " alt="img/1k.jpg" data-click-state="0"
+                                                id="pink-item">
+                                                <span class="txt-label">pink</span>
+                                                <div class="dotes doteBorderHide " id="doteBorder-pink-item">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row dotes-container-size display-n">
+                                            <p class="text-header ">Size : </p>
+                                            <div class="gray dotes dotesImg dotesSize">
+                                               <P style="margin:auto">L</P>
+                                            </div>
+                                            <div class="gray dotes dotesImg dotesSize">
+                                                <P style="margin:auto">M</P>
+                                             </div>
+                                             <div class="gray dotes dotesImg dotesSize">
+                                                <P style="margin:auto">XL</P>
+                                             </div>
+                                             <div class="gray dotes dotesImg dotesSize">
+                                                <P style="margin:auto">XXL</P>
+                                             </div>
+                                         
+                                        </div>
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Jacket</a>
+                                                <span>,</span>
+                                                <a href="#0">Women</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Drawstring Bermuda
+                                                Shorts</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>36.89</bdi>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-rating-pepole display-n">
+                                                (2 customer reviews)
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Terras freta praeter hanc concordi. Adspirate ora diversa utramque
+                                                    diffundi. Instabilis sine sibi sic tenent gentes inmensa dominari.
+                                                    Norant nec galeae subsidere coeperunt. Cinxit locavit fixo campoque
+                                                    qui locis effigiem ante. Dissaepserat nullaque motura rudis postquam
+                                                    media iudicis. Permisit prima deorum tuba piscibus!
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item  babyGirl shirt" data-search-term="Hoodie">
+                                <a href="product.html">
+                                <div class="card  item-card postion-r overflow-h" id="item-card-12">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/16"
+                                        date="2020/02/16">
+                                        <img src="img/16a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/16b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/16a.jpg"  data-image-two="img/16b.jpg" 
+                                        data-image-three="img/16c.jpg"  data-image-four="img/16d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-5%</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Baby Girl</a>
+                                                <span>,</span>
+                                                <a href="#0">Shirt</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Drawstring
+                                                Hoodie</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>18.99</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>20.00</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Hanc locavit hunc. Fluminaque mollia instabilis homini lapidosos cum
+                                                    supplex proximus finxit. Onerosior dispositam galeae cepit. Proximus
+                                                    siccis librata terrae inposuit porrexerat quam aethere. Proximus
+                                                    coeptis ita exemit omni tempora terrenae. Nisi terram illi ita
+                                                    opifex duris dissaepserat pulsant ora. Rudis timebat caeca.
+                                                    <br>
+                                                    <br>
+                                                    Nebulas caeca. Igni sole nam haec parte quod? Limitibus iners homini
+                                                    mutatas forma tonitrua. Declivia fontes sed animus cognati.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item accessories babyBoy  " data-search-term="Backpack">
+                                <a href="product.html"> 
+                                <div class="card item-card postion-r overflow-h" id="item-card-15">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/19">
+                                        <img src="img/19a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/19b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/19a.jpg"  data-image-two="img/19b.jpg" 
+                                        data-image-three="img/19c.jpg"  data-image-four="img/19d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-35%</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#navModal" role="button" data-toggle="modal"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="timer-container" id="timer">
+                                            <div class="timer timer-day ml-0" id="days-3"></div>
+                                            <div class="timer timer-hours" id="hours-3"></div>
+                                            <div class="timer timer-minutes" id="minutes-3"></div>
+                                            <div class="timer timer-seconds" id="seconds-3"></div>
+                                        </div>
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Accessories</a>
+                                                <span>,</span>
+                                                <a href="#0">Baby Boy</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Glittered Mini
+                                                Backpack</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>36.89</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>56.99</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Ventis habitandae inposuit vindice astra stagna viseret militis.
+                                                    Caeca onerosior cepit videre mollia piscibus campos animus. Mutastis
+                                                    vindice habendum corpora tegit. Piscibus persidaque limitibus
+                                                    horrifer. Caeleste bene levitate levitate mixtam illic tanta
+                                                    peragebant. Et haec undae mixta pinus carmen otia parte cesserunt
+                                                    adspirate.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item accessories men " data-search-term="FlapBackpack">
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-11">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/14">
+                                        <img src="img/14a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/14b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/14a.jpg"  data-image-two="img/14b.jpg" 
+                                        data-image-three="img/14c.jpg"  data-image-four="img/14d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="featured product-flash">Hot</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Accessories</a>
+                                                <span>,</span>
+                                                <a href="#0">Men</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Grey Flap Backpack
+                                                Straps</a>
+                                        </h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>45.00</bdi>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Divino circumfluus. Quod inminet fuit coeperunt. Humanas in oppida os
+                                                    natura terris naturae. Nam terrenae igni mixta onerosior diversa
+                                                    lege elementaque. Alta fuerant liquidum erant tollere campoque! Mea
+                                                    mentes rudis imagine declivia mea fratrum. Posset: pro est naturae
+                                                    exemit tempora addidit homini animalia.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart "><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item  men shirt " data-search-term="Hagerstown">
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-19">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/12">
+                                        <img src="img/12a.jpg" class="card-img-show" alt="...">
+                                        <img src="img/12b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/12a.jpg"  data-image-two="img/12b.jpg" 
+                                        data-image-three="img/12c.jpg"  data-image-four="img/12d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-35%</span>
+                                            <span class="featured product-flash">Hot</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Men</a>
+                                                <span>,</span>
+                                                <a href="#0">Shirt</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Hagerstown School
+                                                Varsity</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>43.00</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>66.00</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Metusque totidemque caelumque aliud? Umor poena adsiduis septemque.
+                                                    Adsiduis iapeto emicuit pluvialibus spectent finxit temperiemque
+                                                    moderantum. Nebulas pendebat praebebat stagna tum habendum feras
+                                                    perpetuum. Levius ad pondus temperiemque fixo quam mea obstabatque.
+                                                    Fronde membra super proximus agitabilis quisque recens ultima
+                                                    ardentior. Quam tonitrua.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item babyBoy shirt " data-search-term="Sweater">
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-14">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/20">
+                                        <img src="img/20a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/20b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/20a.jpg"  data-image-two="img/20b.jpg" 
+                                        data-image-three="img/20c.jpg"  data-image-four="img/20d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-41%</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Baby Boy</a>
+                                                <span>,</span>
+                                                <a href="#0">Shirt</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Knit Polo
+                                                Sweater</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>26.99</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>46.00</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Aliis abscidit turba caelumque. Diffundi hominum duas ligavit:
+                                                    calidis alto. Illic dextra tollere. Eurus peragebant tellure orbem.
+                                                    Liquidas recessit dispositam sibi tonitrua passim sinistra neu.
+                                                    Certis caeli margine igni derecti tellus. Deorum coegit illic.
+                                                    Cuncta media caeca silvas pendebat perpetuum homini crescendo aurea.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                               </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item  babyGirl " data-search-term="LeatherPlimsolls">
+                                <a href="product.html">
+                                <div class="card  item-card postion-r overflow-h" id="item-card-13">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/17">
+                                        <img src="img/17a.jpg" class="card-img-show" alt="...">
+                                        <img src="img/17b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/17a.jpg"  data-image-two="img/17b.jpg" 
+                                        data-image-three="img/17c.jpg"  data-image-four="img/17d.jpg"
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="featured product-flash">Hot</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Baby Girl</a>
+                                                <span>,</span>
+                                                <a href="#0">Shoes</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Leather
+                                                Plimsolls</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>33.29</bdi>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="4.67" style="--rating:4.67;"
+                                                    aria-label="Rating of this product is 4.67 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Nebulas caeca. Igni sole nam haec parte quod? Limitibus iners homini
+                                                    mutatas forma tonitrua. Declivia fontes sed animus cognati. Origo
+                                                    coercuit mea instabilis obliquis satus ab ante. Ut flamma crescendo
+                                                    mundo vultus origine illis diversa? Ultima nisi quisque utque
+                                                    colebat ultima aberant mollia.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item men shirt" data-search-term="Shirt">
+                                <a href="product.html">
+                                <div class="card  item-card postion-r overflow-h" id="item-card-17">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/10">
+                                        <img src="img/10a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/10b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/10a.jpg"  data-image-two="img/10b.jpg" 
+                                        data-image-three="img/10c.jpg"  data-image-four="img/10d.jpg" 
+                                        ></div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Men</a>
+                                                <span>,</span>
+                                                <a href="#0">Shirt</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Long Sleeve Cotton
+                                                Shirt </a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>63.45</bdi>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Dei campos securae ille fluminaque astra. Fuerant aere fert caelum
+                                                    habitandae orbe. Locis minantia indigestaque tum. Fontes ignotas
+                                                    utque pronaque prima bracchia recens rectumque mutastis. Partim
+                                                    unus. Mutatas litora quarum sed. Fulgura neu iuga securae subdita
+                                                    vos fluminaque. Litem neu silvas recens sectamque.
+                                                    <br>
+                                                    <br>
+                                                    Montes feras fronde stagna. Mutastis nisi. Quae quinta consistere
+                                                    haec vos egens et hominum sive. Bracchia premuntur praebebat.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item shirt Women" data-search-term="BermudaShorts">
+                                <a href="product.html">
+                                <div class="card  item-card postion-r overflow-h" id="item-card-5">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/5">
+                                        <img src="img/5a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/5b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/5a.jpg"  data-image-two="img/5b.jpg" 
+                                        data-image-three="img/5c.jpg"  data-image-four="img/5d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-31%</span>
+                                            <span class="featured product-flash">Hot</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Shirt</a>
+                                                <span>,</span>
+                                                <a href="#0">Women</a>
+
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Drawstring Bermuda
+                                                Shorts</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>40.00</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>58.00</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Unda freta occiduo effigiem vultus longo. Formaeque titan nuper nix
+                                                    habentia. Ora sata passim peragebant pugnabant longo postquam. Ne
+                                                    cognati habitandae inmensa unda. Caligine alto prima. Arce illic
+                                                    septemque perpetuum locis coeperunt eodem consistere terrenae.
+                                                    Densior scythiam sui iunctarum elementaque sponte bracchia oppida.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item Women accessories blackHeadband brownHeadband" data-search-term="Headband">
+                                <a href="product.html">
+                                <div class="card item-card  postion-r overflow-h" id="item-card-2">
+                                    <div class="card-img postion-r card-img-list overflow-h " id="item-2">
+                                        <img src="img/2b.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/2g.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/2a.jpg"  data-image-two="img/2b.jpg" 
+                                        data-image-three="img/2c.jpg"  data-image-four="img/2d.jpg" data-image-five="img/2e.jpg"
+                                        data-image-six="img/2f.jpg" data-image-seven="img/2g.jpg"  data-image-Eight="img/2h.jpg"
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-20%</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="row dotes-container dotes-container-img pl-0 ml-0">
+                                            <div class="gray dotes dotesImg">
+                                                <img class="dotesImg-1" src="img/2g.jpg" alt="img/2g.jpg"
+                                                    id="blackPolka " data-click-state="0">
+
+                                            </div>
+                                            <div class="pink-item dotes dotesImg" alt="img/2b.jpg" data-click-state="0"
+                                                id="brownPolka ">
+                                                <img class="dotesImg-2" src="img/2b.jpg" alt="" data-click-state="0">
+                                                <div class="dotes doteBorderHide " id="doteBorder">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Accessories</a>
+                                                <span>,</span>
+                                                <a href="#0">Women</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Polka Dot
+                                                Headband</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>36.89</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>45.99</del>
+                                                </span>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Dei vindice? Retinebat imagine duae acervo fuerant caeca. Terrae hunc
+                                                    diremit quia circumfluus dextra terrarum principio. Supplex supplex
+                                                    regat aethera tonitrua semine dispositam. Habitandae galeae
+                                                    perveniunt umor chaos: pace suis. Caecoque sinistra poena speciem
+                                                    ensis freta. Solum ligavit: cura coercuit effervescere sui turba!
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item accessories men Women " data-search-term="Sunglasses">
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-6">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/7">
+                                        <img src="img/7a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/7b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/7a.jpg"  data-image-two="img/7b.jpg" 
+                                        data-image-three="img/7c.jpg"  data-image-four="img/7d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-26%</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Accessories</a>
+                                                <span>,</span>
+                                                <a href="#0">Men</a>
+                                                <span>,</span>
+                                                <a href="#0">Women</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Round Mirrored
+                                                Sunglasses</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>40.00</bdi>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Nebulas lumina recens longo. Titan scythiam cornua formaeque
+                                                    limitibus iussit aberant deerat pace. Terrae diu consistere
+                                                    ardentior tempora aquae fratrum agitabilis. Duris extendi aera
+                                                    pondere ultima umentia mare. Declivia origo capacius habentia deerat
+                                                    vultus dixere. Tenent undae nabataeaque coercuit regat feras illis
+                                                    grandia!
+                                                    <br>
+                                                    <br> Origine hominum unda effervescere caelum mare caligine litem.
+                                                    Adspirate hanc pluviaque semina semine dominari dextra natus flexi.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item shirt Women larg medium xlarg xxlarg" data-search-term="Sunglasses">
+                                <a href="product.html">
+                                <div class="card  item-card postion-r overflow-h" id="item-card-7">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/8">
+                                        <img src="img/8a.jpg" class="card-img-show" alt="...">
+                                        <img src="img/8b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/8a.jpg"  data-image-two="img/8b.jpg" 
+                                        data-image-three="img/8c.jpg"  data-image-four="img/8d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-26%</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Shirt</a>
+                                                <span>,</span>
+                                                <a href="#0">Women</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Round Mirrored
+                                                Sunglasses</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>43.00</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>58.12</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Origine hominum unda effervescere caelum mare caligine litem.
+                                                    Adspirate hanc pluviaque semina semine dominari dextra natus flexi.
+                                                    Alta colebat colebat invasit omnia aethere fossae terrae freta.
+                                                    Sinistra totidemque legebantur pluvialibus lucis sole. Silvas mixtam
+                                                    melior undis. Dei norant feras motura obstabatque pluvialibus aere.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item accessories Shoes larg medium xlarg xxlarg  " data-search-term="ScarfWedges">
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-4">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/4">
+                                        <img src="img/4a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/4c.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/4a.jpg"  data-image-two="img/4b.jpg" 
+                                        data-image-three="img/4c.jpg"  data-image-four="img/4d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-12%</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Accessories</a>
+                                                <span>,</span>
+                                                <a href="#0">Shoes</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Scarf Fabric Tie
+                                                Up Wedges</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>25.45</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>28.77</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="4.33" style="--rating:4.33 ;"
+                                                    aria-label="Rating of this product is 4.33  out of 5">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Non ab undae? Diverso satus liquidas cuncta his tollere animalia
+                                                    radiis finxit? Ille tanto quem tepescunt tellure diversa membra
+                                                    nuper colebat. Praebebat corpore. Amphitrite cognati. Declivia
+                                                    cesserunt invasit pro quem! Coercuit flamma aliud diffundi densior
+                                                    umentia extendi ignotas cinxit. Deerat tum colebat humanas.
+                                                    <br>
+                                                    <br>
+                                                    Super orbe premuntur poena scythiam matutinis principio. Bene
+                                                    dissociata chaos: tegit mixta. Instabilis nitidis origo recens.
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item Shoes Women " data-search-term="ScarfWedges">
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-8">
+                                    <div class="card-img postion-r card-img-list   overflow-h ">
+                                        <img src="img/6a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/6d.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/6a.jpg"  data-image-two="img/6b.jpg" 
+                                        data-image-three="img/6c.jpg"  data-image-four="img/6d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="featured product-flash">Hot</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Shoes</a>
+                                                <span>,</span>
+                                                <a href="#0">Women</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Scarf Fabric Wedges</a>
+                                        </h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>23.45</bdi>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Nulli parte cesserunt fronde finxit manebat proximus dominari
+                                                    frigida. Tempora sibi non dei plagae effervescere vis toto! Cornua
+                                                    tuba spisso traxit. Tum terris gravitate effigiem! Turba volucres
+                                                    extendi umentia sectamque nullo diverso inminet omni. Tollere
+                                                    zephyro ultima phoebe nabataeaque diverso posset: rudis coercuit.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item accessories men" data-search-term="Watch">
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-9">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/13">
+                                        <img src="img/13a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/13b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/13a.jpg"  data-image-two="img/13b.jpg" 
+                                        data-image-three="img/13c.jpg"  data-image-four="img/13d.jpg"
+                                        ></div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Accessories</a>
+                                                <span>,</span>
+                                                <a href="#0">Men</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Silver Coloured
+                                                Watch</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>40.00</bdi>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Nulli parte cesserunt fronde finxit manebat proximus dominari
+                                                    frigida. Tempora sibi non dei plagae effervescere vis toto! Cornua
+                                                    tuba spisso traxit. Tum terris gravitate effigiem! Turba volucres
+                                                    extendi umentia sectamque nullo diverso inminet omni. Tollere
+                                                    zephyro ultima phoebe nabataeaque diverso posset: rudis coercuit.
+                                                </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item shirt larg medium xlarg xxlarg " data-search-term="T-shirt">
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-20">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/15">
+                                        <img src="img/15a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/15c.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/15a.jpg"  data-image-two="img/15b.jpg" 
+                                        data-image-three="img/15c.jpg"  data-image-four="img/15d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="featured product-flash">Hot</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Shirt</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">T-shirt with
+                                                flocked skull</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>36.89</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>46.00</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="4.67" style="--rating:4.67;"
+                                                    aria-label="Rating of this product is 4.67 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Fratrum invasit naturae quanto ora utque. Lapidosos nubibus
+                                                    congestaque militis di. Dissociata iunctarum quisque illi quicquam.
+                                                    Astra tuba et cornua mixta litora effervescere quae longo! Alto
+                                                    facientes aethera igni silvas nondum cesserunt pulsant litora.
+                                                    Habitandae sed boreas rectumque deducite galeae valles iapeto
+                                                    diffundi.
+                                                    <br>
+                                                    <br>
+                                                    Nova locavit lacusque porrexerat totidem pressa alto. Faecis quia
+                                                    circumfluus caeli traxit ante secant. Caelum inmensa forma speciem.
+                                                    Altae corpora fluminaque? Non recepta caelumque iussit figuras
+                                                    spectent madescit dominari.
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent ProductCartona item  shirt Women" data-search-term="Shirt">
+                                <a href="product.html">
+                                <div class="card item-card postion-r overflow-h" id="item-card-3" 
+                                   >
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/3">
+                                        <img src="img/3a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/3b.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/3a.jpg"  data-image-two="img/3b.jpg" 
+                                        data-image-three="img/3c.jpg"  data-image-four="img/3d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-22%</span>
+                                            <span class="featured product-flash">Hot</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Shirt</a>
+                                                <span>,</span>
+                                                <a href="#0">Women</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">Tropical Print
+                                                Shirt</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>36.89</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>88.00</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="5" style="--rating:5;"
+                                                    aria-label="Rating of this product is 5 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Non ab undae? Diverso satus liquidas cuncta his tollere animalia
+                                                    radiis finxit? Ille tanto quem tepescunt tellure diversa membra
+                                                    nuper colebat. Praebebat corpore. Amphitrite cognati. Declivia
+                                                    cesserunt invasit pro quem! Coercuit flamma aliud diffundi densior
+                                                    umentia extendi ignotas cinxit. Deerat tum colebat humanas. </p>
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent  ProductCartona item accessories Shoes Women  " data-search-term="Trainers">
+                                <a href="product.html">
+                                <div class="card  item-card postion-r overflow-h" id="item-card-10">
+                                    <div class="card-img postion-r card-img-list  overflow-h " date="2020/02/9">
+                                        <img src="img/9a.jpg" style="width: 100%;" class="card-img-show" alt="...">
+                                        <img src="img/9d.jpg" class="cardImgHide " alt="...">
+                                        <div class="imageData display-n" data-image-one="img/9a.jpg"  data-image-two="img/9b.jpg" 
+                                        data-image-three="img/9c.jpg"  data-image-four="img/9d.jpg" 
+                                        ></div>
+                                        <div class="product-flashs">
+                                            <span class="onsale product-flash">-20%</span>
+                                            <span class="featured product-flash">Hot</span>
+                                        </div>
+                                        <div class="icons ">
+                                            <ul>
+                                                <li>
+                                                 <a href="#0" data-click-state="0" class="add-to-wishlist"><i class="far fa-heart"></i></a>
+                                                    <span class="txt-icon-label">Wishlist</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#cartModal" role="button" data-toggle="modal"
+                                                        data-click-state="0" class="add-to-cart"><i
+                                                            class="fal fa-shopping-bag"></i></a>
+                                                    <span class="txt-icon-label">Select options</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-sync"></i></a>
+                                                    <span class="txt-icon-label">Compare</span>
+                                                </li>
+                                                <li>
+
+                                                    <a href="#0"><i class="fas fa-eye"></i></a>
+                                                    <span class="txt-icon-label">Quick View</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pl-0 pb-2">
+                                        <div class="timer-container" id="timer">
+                                            <div class="timer timer-day ml-0" id="days-4"></div>
+                                            <div class="timer timer-hours" id="hours-4"></div>
+                                            <div class="timer timer-minutes" id="minutes-4"></div>
+                                            <div class="timer timer-seconds" id="seconds-4"></div>
+                                        </div>
+                                        <div class="item-info">
+                                            <p class="mb-0">
+                                                <a href="#0">Accessories</a>
+                                                <span>,</span>
+                                                <a href="#0">Women</a>
+                                            </p>
+                                        </div>
+                                        <h5 class="card-title"> <a href="#0" class="product-link productName"
+                                                style="font-size: 14px;font-family: Poppins;">White Lace Up
+                                                Trainers</a></h5>
+                                        <div class="product-rating-price">
+                                            <div class="price-content  ">
+                                                <span class="Price-amount price amount">
+                                                    <span class="Price-currencySymbol">£</span> <bdi>32.00</bdi>
+                                                </span>
+                                                <span class="Price-amount discountPrice amount">
+                                                    <span class="Price-currencySymbol">£</span><del>40.00</del>
+                                                </span>
+                                            </div>
+                                            <div class="product-rating postion-hb ">
+                                                <div class="Stars" rating="4.50" style="--rating:4.50;"
+                                                    aria-label="Rating of this product is 4.50 out of 5.">
+                                                </div>
+                                            </div>
+                                            <div class="prodect-disc display-n">
+                                                <p>Colebat fuerat finxit fecit dicere locum iapeto. Diremit divino
+                                                    librata. Foret aestu faecis caelo nitidis tonitrua aquae otia. Natus
+                                                    passim instabilis orba. Semina inclusum utramque animal vesper
+                                                    iussit prima aliud terrenae! Proxima locum valles consistere austro
+                                                    ventis. Magni suis hunc acervo supplex caeleste.
+                                            </div>
+                                             <div class="btn  btn-selct"><a href="#cartmodal" role="button" data-toggle="modal"
+                                                data-click-state="0" class="add-to-cart"><span class="txt-label">Select
+                                                        options</span><span class="shopping-bag-icon"><i
+                                                            class="fal fa-shopping-bag"></i></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="m-auto">
+
+                                <div id="pagination-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- footer  section / -->
+    <footer class="overflow-h">
+        <div class="footerContainer pt-10 pl-20 pr-20 pb-10">
+            <div class="row subscribe">
+                <div class="col-lg-1 col-md-1">
+                    <div>
+                        <h4 class="formHeader">Newsletter</h4>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+
+                    <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-831" method="post" data-id="831"
+                        data-name="Newsletter">
+                        <div class="mc4wp-form-fields">
+                            <div class="newsletter-form">
+                                <input type="email" name="EMAIL" placeholder="Enter your email address..." required="">
+                                <input type="submit" class="lorada-btn medium" value="SUBSCRIBE">
+                            </div>
+                        </div>
+                        <label style="display: none !important;">Leave this field empty if you're human: <input
+                                type="text" name="_mc4wp_honeypot" value="" tabindex="-1"
+                                autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp"
+                            value="1631207157"><input type="hidden" name="_mc4wp_form_id" value="831"><input
+                            type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
+                        <div class="mc4wp-response"></div>
+                    </form>
+                </div>
+                <div class="col-lg-4 col-lg-4 col-md-6 col-sm-6 xs-12 itemCardParent icon-body">
+                    <div class="title">
+                        <span class="heading-title ">Follow Us:</span>
+                    </div>
+                    <div class="social-icons">
+                        <div class="icon">
+                            <a class="social-icon icon-facebook-f " target="_blank">
+                                <i class="fab fa-facebook-f"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class=" social-icon twitter " target="_blank">
+                                <i class="fab fa-twitter"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class=" social-icon pinterest-p " target="_blank">
+                                <i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                        <div class=" icon">
+                            <a class="google-plus-g " target="_blank">
+                                <i class="social-icon fab fa-google-plus-g"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class="instagram" target="_blank">
+                                <i class="social-icon fab fa-instagram"></i></a>
+                        </div>
+                        <div class="icon">
+                            <a class="youtube " target="_blank">
+                                <i class="social-icon fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-12">
+                        <div class="links-header">Find It Fast</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="linkiteam"><a href="#0"><span>New In</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Best Seller</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Clothing</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Men</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Women</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Baby Girl</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Baby Boys</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Accessories</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Shoes</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-12">
+                        <div class="links-header" style="visibility: hidden;">d</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="linkiteam"><a href="#0"><span>T-Shirts</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Shirts</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Bags</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Dresses</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Jeans</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Shorts</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Blouses & Shirts</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Blazers</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="col-lg-12">
+                        <div class="links-header">My Account</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="linkiteam"><a href="#0"><span>My Account</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>My Wishlist</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Compare Products</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Discount</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Track Order</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Shop</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>About Us</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>Returns/Exchange</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span>FAQs</span></a></li>
+                                <li class="linkiteam"><a href="#0"><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="links-header">Contact Us</div>
+                    <div class="col-lg-12">
+                        <div class="links">
+                            <ul class="links-ul">
+                                <li class="iteamSpan"><span class="spanicon"><i
+                                            class="fas fa-headphones-alt"></i></span><span class="textspan"> Got
+                                        Question? Call Us 24/7</span></li>
+                                <li class="iteamSpan"><span class="textonly">(364) 106 7572 <span class="betweentext">or
+                                        </span> (052) 611 5711</span></li>
+                                <li class="iteamSpan"><span class="spanicon"><i class="far fa-building"></i></span><span
+                                        class="textspan"> 3801 Chalk Butte Rd, Cutbank, Montana, USA</span></li>
+                                <li class="iteamSpan"><span class="spanicon"><i
+                                            class="far fa-envelope-open"></i></span><span class="textspan">
+                                        contact@lorada.com</span></li>
+                                <li class="iteamSpan"><span class="spanicon"><i class="far fa-clock"></i></span><span
+                                        class="textspan"> Work time:</span></li>
+                                <li class="iteamSpan"><span class="daysOpenTime">Mon - Sat: 9:00AM -6:00PM | Sunday:
+                                        Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row copyRightlayer">
+                <div class="col-lg-6 col-md-6 ">
+                    <div class="copyRight">
+                        © 2019 Lorada. All Rights Reserved.
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 payment">
+                    <div class="payment">
+                        <div class="paymentImg">
+                            <img src="img/payment_logo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- footer  section / -->
+    <!--script js -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.simplePagination.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.mixitup.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script type="text/javascript" src="databse/product.json"></script>
+    <script src="js/main.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+</body>
+
+</html>
